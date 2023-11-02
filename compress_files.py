@@ -7,17 +7,34 @@ import os
 import subprocess
 import logging
 import multiprocessing
-from typing import Iterator, Tuple, Set
+import argparse
+from icecream import ic
+from typing import Tuple, Set, List
+
+def parse_command_line_args() -> str:
+    """Parse command line arguments."""
+    parser = argparse.ArgumentParser()
+    parser.add_argument("--search_dir", "-d",
+                        type=str,
+                        required=True,
+                        help="Directory to search for uncompressed/human readable sequence data.")
+    args = parser.parse_args()
+    return args.search_dir
 
 
 # Function to find files
-def find_files(directory: str, extensions: Tuple[str, ...]) -> Iterator[str]:
+def find_files(directory: str, extensions: Tuple[str, ...]) -> List[str]:
     """ """
 
+    file_list: List[str] = []
+    
     for root, _, files in os.walk(directory):
         for file in files:
-            if file.endswith(tuple(extensions)):
-                yield os.path.join(root, file)
+            if file.endswith(extensions) and not file.startswith("._"):
+                ic(file)
+                file_list.append(os.path.join(root, file))
+    
+    return file_list
 
 
 def process_file(
@@ -46,7 +63,7 @@ def main() -> None:
     """ """
 
     # Set the directory to start the search
-    base_directory = ""
+    base_directory = parse_command_line_args()
 
     # Define file extensions
     fasta_extensions = tuple([".fasta", ".fa"])
@@ -66,15 +83,15 @@ def main() -> None:
 
     # Get lists of files
     with open("file_list.txt", "a", encoding="utf-8") as list_handle:
-        fasta_files = list(find_files(base_directory, fasta_extensions))
+        fasta_files = find_files(base_directory, fasta_extensions)
         fastq_files = list(find_files(base_directory, fastq_extensions))
         sam_files = list(find_files(base_directory, sam_extensions))
         for item in fasta_files:
-            list_handle.write(item)
+            list_handle.write(f"{item}\n")
         for item in fastq_files:
-            list_handle.write(item)
+            list_handle.write(f"{item}\n")
         for item in sam_files:
-            list_handle.write(item)
+            list_handle.write(f"{item}\n")
 
     # Create a pool of workers for parallel processing
     pool = multiprocessing.Pool(processes=multiprocessing.cpu_count())
