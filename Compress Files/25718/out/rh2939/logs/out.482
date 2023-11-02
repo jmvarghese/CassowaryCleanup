@@ -1,0 +1,855 @@
+Command line: /opt/conda/bin/spades.py	--pe1-1	/var/lib/condor/execute/slot1/dir_44824/rh2939.Mamu_MiSeq-IPD_17.06.01_2.2.0.0_plus_SP.fasta.hq.R1.fastq	--pe1-2	/var/lib/condor/execute/slot1/dir_44824/rh2939.Mamu_MiSeq-IPD_17.06.01_2.2.0.0_plus_SP.fasta.hq.R2.fastq	--isolate	--phred-offset	33	-k	127	-o	/var/lib/condor/execute/slot1/dir_44824/rh2939.Mamu_MiSeq-IPD_17.06.01_2.2.0.0_plus_SP.fasta	
+
+System information:
+  SPAdes version: 3.15.2
+  Python version: 3.7.10
+  OS: Linux-5.0.8-1.el7.elrepo.x86_64-x86_64-with-debian-9.5
+
+Output dir: /var/lib/condor/execute/slot1/dir_44824/rh2939.Mamu_MiSeq-IPD_17.06.01_2.2.0.0_plus_SP.fasta
+Mode: ONLY assembling (without read error correction)
+Debug mode is turned OFF
+
+Dataset parameters:
+  Isolate mode
+  Reads:
+    Library number: 1, library type: paired-end
+      orientation: fr
+      left reads: ['/var/lib/condor/execute/slot1/dir_44824/rh2939.Mamu_MiSeq-IPD_17.06.01_2.2.0.0_plus_SP.fasta.hq.R1.fastq']
+      right reads: ['/var/lib/condor/execute/slot1/dir_44824/rh2939.Mamu_MiSeq-IPD_17.06.01_2.2.0.0_plus_SP.fasta.hq.R2.fastq']
+      interlaced reads: not specified
+      single reads: not specified
+      merged reads: not specified
+Assembly parameters:
+  k: [127]
+  Repeat resolution is enabled
+  Mismatch careful mode is turned OFF
+  MismatchCorrector will be SKIPPED
+  Coverage cutoff is turned OFF
+Other parameters:
+  Dir for temp files: /var/lib/condor/execute/slot1/dir_44824/rh2939.Mamu_MiSeq-IPD_17.06.01_2.2.0.0_plus_SP.fasta/tmp
+  Threads: 16
+  Memory limit (in Gb): 250
+
+
+======= SPAdes pipeline started. Log can be found here: /var/lib/condor/execute/slot1/dir_44824/rh2939.Mamu_MiSeq-IPD_17.06.01_2.2.0.0_plus_SP.fasta/spades.log
+
+/var/lib/condor/execute/slot1/dir_44824/rh2939.Mamu_MiSeq-IPD_17.06.01_2.2.0.0_plus_SP.fasta.hq.R1.fastq: max reads length: 151
+/var/lib/condor/execute/slot1/dir_44824/rh2939.Mamu_MiSeq-IPD_17.06.01_2.2.0.0_plus_SP.fasta.hq.R2.fastq: max reads length: 151
+
+Reads length: 151
+
+
+===== Before start started. 
+
+
+===== Assembling started. 
+
+
+===== K127 started. 
+
+
+== Running: /opt/conda/bin/spades-core /var/lib/condor/execute/slot1/dir_44824/rh2939.Mamu_MiSeq-IPD_17.06.01_2.2.0.0_plus_SP.fasta/K127/configs/config.info /var/lib/condor/execute/slot1/dir_44824/rh2939.Mamu_MiSeq-IPD_17.06.01_2.2.0.0_plus_SP.fasta/K127/configs/isolate_mode.info
+
+  0:00:00.000     1M / 11M   INFO    General                 (main.cpp                  :  99)   Loaded config from /var/lib/condor/execute/slot1/dir_44824/rh2939.Mamu_MiSeq-IPD_17.06.01_2.2.0.0_plus_SP.fasta/K127/configs/config.info
+  0:00:00.000     1M / 11M   INFO    General                 (main.cpp                  :  99)   Loaded config from /var/lib/condor/execute/slot1/dir_44824/rh2939.Mamu_MiSeq-IPD_17.06.01_2.2.0.0_plus_SP.fasta/K127/configs/isolate_mode.info
+  0:00:00.000     1M / 11M   INFO    General                 (memory_limit.cpp          :  48)   Memory limit set to 250 Gb
+  0:00:00.000     1M / 11M   INFO    General                 (main.cpp                  : 107)   Starting SPAdes, built from N/A, git revision N/A
+  0:00:00.000     1M / 11M   INFO    General                 (main.cpp                  : 108)   Maximum k-mer length: 128
+  0:00:00.000     1M / 11M   INFO    General                 (main.cpp                  : 109)   Assembling dataset (/var/lib/condor/execute/slot1/dir_44824/rh2939.Mamu_MiSeq-IPD_17.06.01_2.2.0.0_plus_SP.fasta/dataset.info) with K=127
+  0:00:00.000     1M / 11M   INFO    General                 (main.cpp                  : 110)   Maximum # of threads to use (adjusted due to OMP capabilities): 1
+  0:00:00.000     1M / 11M   INFO    General                 (pipeline.cpp              : 212)   SPAdes started
+  0:00:00.000     1M / 11M   INFO    General                 (pipeline.cpp              : 225)   Starting from stage: read_conversion
+  0:00:00.000     1M / 11M   INFO    General                 (pipeline.cpp              : 231)   Two-step repeat resolution disabled
+  0:00:00.000     1M / 11M   INFO   GraphCore                (graph_core.hpp            : 672)   Graph created, vertex min_id: 3, edge min_id: 3
+  0:00:00.000     1M / 11M   INFO   GraphCore                (graph_core.hpp            : 673)   Vertex size: 48, edge size: 40
+  0:00:00.000     1M / 11M   INFO    General                 (edge_index.hpp            : 113)   Size of edge index entries: 12/8
+  0:00:00.000     1M / 11M   INFO    General                 (pipeline.cpp              : 242)   Will need read mapping, kmer mapper will be attached
+  0:00:00.000     1M / 11M   INFO   StageManager             (stage.cpp                 : 185)   STAGE == Binary Read Conversion (id: read_conversion)
+  0:00:00.000     1M / 11M   INFO    General                 (read_converter.cpp        :  72)   Converting reads to binary format for library #0 (takes a while)
+  0:00:00.000     1M / 11M   INFO    General                 (read_converter.cpp        :  73)   Converting paired reads
+  0:00:00.072    28M / 28M   INFO    General                 (binary_converter.cpp      :  96)   16384 reads processed
+  0:00:00.142    33M / 33M   INFO    General                 (binary_converter.cpp      :  96)   32768 reads processed
+  0:00:00.470    23M / 37M   INFO    General                 (binary_converter.cpp      : 111)   54804 reads written
+  0:00:00.470     1M / 37M   INFO    General                 (read_converter.cpp        :  81)   Converting single reads
+  0:00:00.470    11M / 37M   INFO    General                 (binary_converter.cpp      : 111)   0 reads written
+  0:00:00.470     1M / 37M   INFO    General                 (read_converter.cpp        :  87)   Converting merged reads
+  0:00:00.470    11M / 37M   INFO    General                 (binary_converter.cpp      : 111)   0 reads written
+  0:00:00.470     1M / 37M   INFO   StageManager             (stage.cpp                 : 185)   STAGE == de Bruijn graph construction (id: construction)
+  0:00:00.471     1M / 37M   INFO    General                 (construction.cpp          : 153)   Max read length 151
+  0:00:00.471     1M / 37M   INFO    General                 (construction.cpp          : 159)   Average read length 151
+  0:00:00.471     1M / 37M   INFO    General                 (stage.cpp                 : 117)   PROCEDURE == k+1-mer counting (id: construction:kpomer_counting)
+  0:00:00.471     1M / 37M   INFO    General                 (kmer_index_builder.hpp    : 243)   Splitting kmer instances into 10 files using 1 threads. This might take a while.
+  0:00:00.471     1M / 37M   INFO    General                 (file_limit.hpp            :  32)   Open file limit set to 1048576
+  0:00:00.471     1M / 37M   INFO    General                 (kmer_splitter.hpp         :  93)   Memory available for splitting buffers: 83.3333 Gb
+  0:00:00.471     1M / 37M   INFO    General                 (kmer_splitter.hpp         : 101)   Using cell size of 1677721
+  0:00:01.457   601M / 601M  INFO    General                 (kmer_splitters.hpp        : 125)   Processed 219216 reads
+  0:00:01.457     1M / 131M  INFO    General                 (kmer_splitters.hpp        : 131)   Used 219216 reads
+  0:00:01.458     1M / 131M  INFO    General                 (kmer_index_builder.hpp    : 249)   Starting k-mer counting.
+  0:00:01.472     1M / 131M  INFO    General                 (kmer_index_builder.hpp    : 260)   K-mer counting done. There are 187284 kmers in total.
+  0:00:01.472     1M / 131M  INFO    General                 (stage.cpp                 : 117)   PROCEDURE == Extension index construction (id: construction:extension_index_construction)
+  0:00:01.472     1M / 131M  INFO   K-mer Index Building     (kmer_index_builder.hpp    : 438)   Building kmer index
+  0:00:01.472     1M / 131M  INFO    General                 (kmer_index_builder.hpp    : 243)   Splitting kmer instances into 10 files using 1 threads. This might take a while.
+  0:00:01.473     1M / 131M  INFO    General                 (file_limit.hpp            :  32)   Open file limit set to 1048576
+  0:00:01.473     1M / 131M  INFO    General                 (kmer_splitter.hpp         :  93)   Memory available for splitting buffers: 83.3333 Gb
+  0:00:01.473     1M / 131M  INFO    General                 (kmer_splitter.hpp         : 101)   Using cell size of 1677721
+  0:00:01.610   601M / 601M  INFO    General                 (kmer_splitters.hpp        : 194)   Processed 187284 kmers
+  0:00:01.610   601M / 601M  INFO    General                 (kmer_splitters.hpp        : 199)   Used 187284 kmers.
+  0:00:01.610     1M / 131M  INFO    General                 (kmer_index_builder.hpp    : 249)   Starting k-mer counting.
+  0:00:01.625     1M / 131M  INFO    General                 (kmer_index_builder.hpp    : 260)   K-mer counting done. There are 191082 kmers in total.
+  0:00:01.625     1M / 131M  INFO   K-mer Index Building     (kmer_index_builder.hpp    : 395)   Building perfect hash indices
+  0:00:01.661     1M / 131M  INFO   K-mer Index Building     (kmer_index_builder.hpp    : 431)   Index built. Total 191082 kmers, 145496 bytes occupied (6.09146 bits per kmer).
+  0:00:01.661     1M / 131M  INFO    General                 (kmer_index_builder.hpp    : 169)   Merging final buckets.
+  0:00:01.672     1M / 131M  INFO   DeBruijnExtensionIndexBu (kmer_extension_index_build: 100)   Building k-mer extensions from k+1-mers
+  0:00:01.741     1M / 131M  INFO   DeBruijnExtensionIndexBu (kmer_extension_index_build: 105)   Building k-mer extensions from k+1-mers finished.
+  0:00:01.742     1M / 131M  INFO    General                 (stage.cpp                 : 117)   PROCEDURE == Condensing graph (id: construction:graph_condensing)
+  0:00:01.742     1M / 131M  INFO   UnbranchingPathExtractor (debruijn_graph_constructor: 354)   Extracting unbranching paths
+  0:00:01.873     2M / 131M  INFO   UnbranchingPathExtractor (debruijn_graph_constructor: 373)   Extracting unbranching paths finished. 9390 sequences extracted
+  0:00:01.976     2M / 131M  INFO   UnbranchingPathExtractor (debruijn_graph_constructor: 309)   Collecting perfect loops
+  0:00:02.001     2M / 131M  INFO   UnbranchingPathExtractor (debruijn_graph_constructor: 342)   Collecting perfect loops finished. 1 loops collected
+  0:00:02.003     2M / 131M  INFO    General                 (debruijn_graph_constructor: 487)   Total 18782 edges to create
+  0:00:02.003     2M / 131M  INFO    General                 (debruijn_graph_constructor: 489)   Collecting link records
+  0:00:02.023     3M / 131M  INFO    General                 (debruijn_graph_constructor: 491)   Ordering link records
+  0:00:02.025     3M / 131M  INFO    General                 (debruijn_graph_constructor: 493)   Sorting done
+  0:00:02.025     3M / 131M  INFO    General                 (debruijn_graph_constructor: 503)   Total 13189 vertices to create
+  0:00:02.026     4M / 131M  INFO    General                 (debruijn_graph_constructor: 506)   Connecting the graph
+  0:00:02.029     3M / 131M  INFO    General                 (stage.cpp                 : 117)   PROCEDURE == Filling coverage indices (PHM) (id: construction:coverage_filling_phm)
+  0:00:02.029     3M / 131M  INFO   K-mer Index Building     (kmer_index_builder.hpp    : 395)   Building perfect hash indices
+  0:00:02.060     4M / 131M  INFO   K-mer Index Building     (kmer_index_builder.hpp    : 431)   Index built. Total 187284 kmers, 142808 bytes occupied (6.10017 bits per kmer).
+  0:00:02.060     4M / 131M  INFO    General                 (coverage_hash_map_builder.:  47)   Collecting k-mer coverage information from reads, this takes a while.
+  0:00:02.747     4M / 131M  INFO    General                 (construction.cpp          : 430)   Filling coverage and flanking coverage from PHM
+  0:00:02.832     4M / 131M  INFO    General                 (coverage_filling.hpp      :  82)   Processed 18782 edges
+  0:00:02.836     3M / 131M  INFO   StageManager             (stage.cpp                 : 185)   STAGE == EC Threshold Finding (id: ec_threshold_finder)
+  0:00:02.836     3M / 131M  INFO    General                 (kmer_coverage_model.cpp   : 181)   Kmer coverage valley at: 29
+  0:00:02.836     3M / 131M  INFO    General                 (kmer_coverage_model.cpp   : 201)   K-mer histogram maximum: 35
+  0:00:02.836     3M / 131M  INFO    General                 (kmer_coverage_model.cpp   : 237)   Estimated median coverage: 36. Coverage mad: 5.9304
+  0:00:02.836     3M / 131M  INFO    General                 (kmer_coverage_model.cpp   : 259)   Fitting coverage model
+  0:00:02.913     3M / 131M  INFO    General                 (kmer_coverage_model.cpp   : 295)   ... iteration 2
+  0:00:03.108     3M / 131M  INFO    General                 (kmer_coverage_model.cpp   : 295)   ... iteration 4
+  0:00:03.793     3M / 131M  INFO    General                 (kmer_coverage_model.cpp   : 295)   ... iteration 8
+  0:00:05.146     3M / 131M  INFO    General                 (kmer_coverage_model.cpp   : 295)   ... iteration 16
+  0:00:07.608     3M / 131M  INFO    General                 (kmer_coverage_model.cpp   : 295)   ... iteration 32
+  0:00:11.882     3M / 131M  INFO    General                 (kmer_coverage_model.cpp   : 309)   Fitted mean coverage: 26.3606. Fitted coverage std. dev: 12.5643
+  0:00:11.884     3M / 131M  INFO    General                 (kmer_coverage_model.cpp   : 334)   Probability of erroneous kmer at valley: 0.273525
+  0:00:11.884     3M / 131M  WARN    General                 (kmer_coverage_model.cpp   : 366)   Failed to determine erroneous kmer threshold. Threshold set to: 29
+  0:00:11.884     3M / 131M  INFO    General                 (kmer_coverage_model.cpp   : 375)   Estimated genome size (ignoring repeats): 18964
+  0:00:11.884     3M / 131M  INFO    General                 (genomic_info_filler.cpp   :  57)   Failed to estimate mean coverage
+  0:00:11.884     3M / 131M  INFO    General                 (genomic_info_filler.cpp   :  70)   EC coverage threshold value was calculated as 29
+  0:00:11.884     3M / 131M  INFO    General                 (genomic_info_filler.cpp   :  71)   Trusted kmer low bound: 0
+  0:00:11.884     3M / 131M  INFO   StageManager             (stage.cpp                 : 185)   STAGE == Gap Closer (id: early_gapcloser)
+  0:00:11.890    12M / 131M  INFO    General                 (edge_index.hpp            : 113)   Size of edge index entries: 12/8
+  0:00:11.899    12M / 131M  INFO    General                 (gap_closer.cpp            : 101)   Total edges in tip neighborhood: 11198 out of 18782, length: 249722
+  0:00:11.899    12M / 131M  INFO    General                 (edge_index.hpp            : 167)   Using small index (max_id = 18878)
+  0:00:11.928    12M / 131M  INFO   K-mer Index Building     (kmer_index_builder.hpp    : 395)   Building perfect hash indices
+  0:00:12.049    13M / 131M  INFO   K-mer Index Building     (kmer_index_builder.hpp    : 431)   Index built. Total 149070 kmers, 108400 bytes occupied (5.8174 bits per kmer).
+  0:00:12.050    14M / 131M  INFO    General                 (edge_index_builders.hpp   : 265)   Collecting edge information from graph, this takes a while.
+  0:00:13.046    14M / 131M  INFO    General                 (sequence_mapper_notifier.h:  95)   Total 54804 reads processed
+  0:00:13.054    12M / 131M  INFO    General                 (gap_closer.cpp            : 452)   Initializing gap closer
+  0:00:13.054    12M / 131M  INFO   GapCloser                (gap_closer.cpp            : 359)   Closing short gaps
+  0:00:13.063    12M / 131M  INFO   GapCloser                (gap_closer.cpp            : 391)   Closing short gaps complete: filled 29 gaps after checking 174 candidates
+  0:00:13.064    12M / 131M  INFO    General                 (gap_closer.cpp            : 456)   Gap closer done
+  0:00:13.066     3M / 131M  INFO   StageManager             (stage.cpp                 : 185)   STAGE == Raw Simplification (id: raw_simplification)
+  0:00:13.066     3M / 131M  INFO    General                 (simplification.cpp        : 127)   PROCEDURE == Initial cleaning
+  0:00:13.067     3M / 131M  INFO    General                 (simplification.cpp        :  61)   Most init cleaning disabled on main iteration
+  0:00:13.067     3M / 131M  INFO   Simplification           (parallel_processing.hpp   : 167)   Running Self conjugate edge remover
+  0:00:13.070     3M / 131M  INFO   Simplification           (parallel_processing.hpp   : 170)   Self conjugate edge remover triggered 0 times
+  0:00:13.070     3M / 131M  INFO   StageManager             (stage.cpp                 : 185)   STAGE == Simplification (id: simplification)
+  0:00:13.070     3M / 131M  INFO    General                 (simplification.cpp        : 368)   Graph simplification started
+  0:00:13.070     3M / 131M  INFO    General                 (graph_simplification.hpp  : 634)   Creating parallel br instance
+  0:00:13.070     3M / 131M  INFO    General                 (simplification.cpp        : 373)   PROCEDURE == Simplification cycle, iteration 1
+  0:00:13.070     3M / 131M  INFO   Simplification           (parallel_processing.hpp   : 167)   Running Tip clipper
+  0:00:13.098     3M / 131M  INFO   Simplification           (parallel_processing.hpp   : 170)   Tip clipper triggered 2731 times
+  0:00:13.098     3M / 131M  INFO   Simplification           (parallel_processing.hpp   : 167)   Running Bulge remover
+  0:00:13.111     3M / 131M  INFO   Simplification           (parallel_processing.hpp   : 170)   Bulge remover triggered 15 times
+  0:00:13.111     3M / 131M  INFO   Simplification           (parallel_processing.hpp   : 167)   Running Low coverage edge remover
+  0:00:13.114     3M / 131M  INFO   Simplification           (parallel_processing.hpp   : 170)   Low coverage edge remover triggered 6 times
+  0:00:13.114     3M / 131M  INFO    General                 (simplification.cpp        : 373)   PROCEDURE == Simplification cycle, iteration 2
+  0:00:13.114     3M / 131M  INFO   Simplification           (parallel_processing.hpp   : 167)   Running Tip clipper
+  0:00:13.114     3M / 131M  INFO   Simplification           (parallel_processing.hpp   : 170)   Tip clipper triggered 9 times
+  0:00:13.114     3M / 131M  INFO   Simplification           (parallel_processing.hpp   : 167)   Running Bulge remover
+  0:00:13.115     3M / 131M  INFO   Simplification           (parallel_processing.hpp   : 170)   Bulge remover triggered 1 times
+  0:00:13.115     3M / 131M  INFO   Simplification           (parallel_processing.hpp   : 167)   Running Low coverage edge remover
+  0:00:13.115     3M / 131M  INFO   Simplification           (parallel_processing.hpp   : 170)   Low coverage edge remover triggered 1 times
+  0:00:13.115     3M / 131M  INFO    General                 (simplification.cpp        : 373)   PROCEDURE == Simplification cycle, iteration 3
+  0:00:13.115     3M / 131M  INFO   Simplification           (parallel_processing.hpp   : 167)   Running Tip clipper
+  0:00:13.115     3M / 131M  INFO   Simplification           (parallel_processing.hpp   : 170)   Tip clipper triggered 0 times
+  0:00:13.115     3M / 131M  INFO   Simplification           (parallel_processing.hpp   : 167)   Running Bulge remover
+  0:00:13.115     3M / 131M  INFO   Simplification           (parallel_processing.hpp   : 170)   Bulge remover triggered 0 times
+  0:00:13.115     3M / 131M  INFO   Simplification           (parallel_processing.hpp   : 167)   Running Low coverage edge remover
+  0:00:13.115     3M / 131M  INFO   Simplification           (parallel_processing.hpp   : 170)   Low coverage edge remover triggered 6 times
+  0:00:13.115     3M / 131M  INFO    General                 (simplification.cpp        : 373)   PROCEDURE == Simplification cycle, iteration 4
+  0:00:13.115     3M / 131M  INFO   Simplification           (parallel_processing.hpp   : 167)   Running Tip clipper
+  0:00:13.115     3M / 131M  INFO   Simplification           (parallel_processing.hpp   : 170)   Tip clipper triggered 1 times
+  0:00:13.115     3M / 131M  INFO   Simplification           (parallel_processing.hpp   : 167)   Running Bulge remover
+  0:00:13.116     3M / 131M  INFO   Simplification           (parallel_processing.hpp   : 170)   Bulge remover triggered 1 times
+  0:00:13.116     3M / 131M  INFO   Simplification           (parallel_processing.hpp   : 167)   Running Low coverage edge remover
+  0:00:13.116     3M / 131M  INFO   Simplification           (parallel_processing.hpp   : 170)   Low coverage edge remover triggered 3 times
+  0:00:13.116     3M / 131M  INFO    General                 (simplification.cpp        : 373)   PROCEDURE == Simplification cycle, iteration 5
+  0:00:13.116     3M / 131M  INFO   Simplification           (parallel_processing.hpp   : 167)   Running Tip clipper
+  0:00:13.116     3M / 131M  INFO   Simplification           (parallel_processing.hpp   : 170)   Tip clipper triggered 0 times
+  0:00:13.116     3M / 131M  INFO   Simplification           (parallel_processing.hpp   : 167)   Running Bulge remover
+  0:00:13.116     3M / 131M  INFO   Simplification           (parallel_processing.hpp   : 170)   Bulge remover triggered 0 times
+  0:00:13.116     3M / 131M  INFO   Simplification           (parallel_processing.hpp   : 167)   Running Low coverage edge remover
+  0:00:13.116     3M / 131M  INFO   Simplification           (parallel_processing.hpp   : 170)   Low coverage edge remover triggered 3 times
+  0:00:13.116     3M / 131M  INFO    General                 (simplification.cpp        : 373)   PROCEDURE == Simplification cycle, iteration 6
+  0:00:13.116     3M / 131M  INFO   Simplification           (parallel_processing.hpp   : 167)   Running Tip clipper
+  0:00:13.116     3M / 131M  INFO   Simplification           (parallel_processing.hpp   : 170)   Tip clipper triggered 0 times
+  0:00:13.116     3M / 131M  INFO   Simplification           (parallel_processing.hpp   : 167)   Running Bulge remover
+  0:00:13.116     3M / 131M  INFO   Simplification           (parallel_processing.hpp   : 170)   Bulge remover triggered 0 times
+  0:00:13.116     3M / 131M  INFO   Simplification           (parallel_processing.hpp   : 167)   Running Low coverage edge remover
+  0:00:13.116     3M / 131M  INFO   Simplification           (parallel_processing.hpp   : 170)   Low coverage edge remover triggered 0 times
+  0:00:13.116     3M / 131M  INFO    General                 (simplification.cpp        : 373)   PROCEDURE == Simplification cycle, iteration 7
+  0:00:13.116     3M / 131M  INFO   Simplification           (parallel_processing.hpp   : 167)   Running Tip clipper
+  0:00:13.116     3M / 131M  INFO   Simplification           (parallel_processing.hpp   : 170)   Tip clipper triggered 0 times
+  0:00:13.116     3M / 131M  INFO   Simplification           (parallel_processing.hpp   : 167)   Running Bulge remover
+  0:00:13.116     3M / 131M  INFO   Simplification           (parallel_processing.hpp   : 170)   Bulge remover triggered 0 times
+  0:00:13.116     3M / 131M  INFO   Simplification           (parallel_processing.hpp   : 167)   Running Low coverage edge remover
+  0:00:13.116     3M / 131M  INFO   Simplification           (parallel_processing.hpp   : 170)   Low coverage edge remover triggered 2 times
+  0:00:13.116     3M / 131M  INFO    General                 (simplification.cpp        : 373)   PROCEDURE == Simplification cycle, iteration 8
+  0:00:13.116     3M / 131M  INFO   Simplification           (parallel_processing.hpp   : 167)   Running Tip clipper
+  0:00:13.116     3M / 131M  INFO   Simplification           (parallel_processing.hpp   : 170)   Tip clipper triggered 0 times
+  0:00:13.116     3M / 131M  INFO   Simplification           (parallel_processing.hpp   : 167)   Running Bulge remover
+  0:00:13.116     3M / 131M  INFO   Simplification           (parallel_processing.hpp   : 170)   Bulge remover triggered 0 times
+  0:00:13.116     3M / 131M  INFO   Simplification           (parallel_processing.hpp   : 167)   Running Low coverage edge remover
+  0:00:13.117     3M / 131M  INFO   Simplification           (parallel_processing.hpp   : 170)   Low coverage edge remover triggered 1 times
+  0:00:13.117     3M / 131M  INFO    General                 (simplification.cpp        : 373)   PROCEDURE == Simplification cycle, iteration 9
+  0:00:13.117     3M / 131M  INFO   Simplification           (parallel_processing.hpp   : 167)   Running Tip clipper
+  0:00:13.117     3M / 131M  INFO   Simplification           (parallel_processing.hpp   : 170)   Tip clipper triggered 0 times
+  0:00:13.117     3M / 131M  INFO   Simplification           (parallel_processing.hpp   : 167)   Running Bulge remover
+  0:00:13.117     3M / 131M  INFO   Simplification           (parallel_processing.hpp   : 170)   Bulge remover triggered 0 times
+  0:00:13.117     3M / 131M  INFO   Simplification           (parallel_processing.hpp   : 167)   Running Low coverage edge remover
+  0:00:13.117     3M / 131M  INFO   Simplification           (parallel_processing.hpp   : 170)   Low coverage edge remover triggered 1 times
+  0:00:13.117     3M / 131M  INFO    General                 (simplification.cpp        : 373)   PROCEDURE == Simplification cycle, iteration 10
+  0:00:13.117     3M / 131M  INFO   Simplification           (parallel_processing.hpp   : 167)   Running Tip clipper
+  0:00:13.117     3M / 131M  INFO   Simplification           (parallel_processing.hpp   : 170)   Tip clipper triggered 0 times
+  0:00:13.117     3M / 131M  INFO   Simplification           (parallel_processing.hpp   : 167)   Running Bulge remover
+  0:00:13.117     3M / 131M  INFO   Simplification           (parallel_processing.hpp   : 170)   Bulge remover triggered 0 times
+  0:00:13.117     3M / 131M  INFO   Simplification           (parallel_processing.hpp   : 167)   Running Low coverage edge remover
+  0:00:13.117     3M / 131M  INFO   Simplification           (parallel_processing.hpp   : 170)   Low coverage edge remover triggered 0 times
+  0:00:13.117     3M / 131M  INFO    General                 (simplification.cpp        : 373)   PROCEDURE == Simplification cycle, iteration 11
+  0:00:13.117     3M / 131M  INFO   Simplification           (parallel_processing.hpp   : 167)   Running Tip clipper
+  0:00:13.119     3M / 131M  INFO   Simplification           (parallel_processing.hpp   : 170)   Tip clipper triggered 0 times
+  0:00:13.119     3M / 131M  INFO   Simplification           (parallel_processing.hpp   : 167)   Running Bulge remover
+  0:00:13.121     3M / 131M  INFO   Simplification           (parallel_processing.hpp   : 170)   Bulge remover triggered 0 times
+  0:00:13.121     3M / 131M  INFO   Simplification           (parallel_processing.hpp   : 167)   Running Low coverage edge remover
+  0:00:13.122     3M / 131M  INFO   Simplification           (parallel_processing.hpp   : 170)   Low coverage edge remover triggered 0 times
+  0:00:13.122     3M / 131M  INFO   StageManager             (stage.cpp                 : 185)   STAGE == Gap Closer (id: late_gapcloser)
+  0:00:13.129    12M / 131M  INFO    General                 (edge_index.hpp            : 113)   Size of edge index entries: 12/8
+  0:00:13.134    13M / 131M  INFO    General                 (gap_closer.cpp            : 101)   Total edges in tip neighborhood: 7726 out of 7804, length: 267988
+  0:00:13.134    13M / 131M  INFO    General                 (edge_index.hpp            : 167)   Using small index (max_id = 18878)
+  0:00:13.158    13M / 131M  INFO   K-mer Index Building     (kmer_index_builder.hpp    : 395)   Building perfect hash indices
+  0:00:13.263    13M / 131M  INFO   K-mer Index Building     (kmer_index_builder.hpp    : 431)   Index built. Total 139888 kmers, 109362 bytes occupied (6.25426 bits per kmer).
+  0:00:13.264    14M / 131M  INFO    General                 (edge_index_builders.hpp   : 265)   Collecting edge information from graph, this takes a while.
+  0:00:13.963    14M / 131M  INFO    General                 (sequence_mapper_notifier.h:  95)   Total 54804 reads processed
+  0:00:13.973    13M / 131M  INFO    General                 (gap_closer.cpp            : 452)   Initializing gap closer
+  0:00:13.973    13M / 131M  INFO   GapCloser                (gap_closer.cpp            : 359)   Closing short gaps
+  0:00:13.984    13M / 131M  INFO   GapCloser                (gap_closer.cpp            : 391)   Closing short gaps complete: filled 54 gaps after checking 669 candidates
+  0:00:13.985    13M / 131M  INFO    General                 (gap_closer.cpp            : 456)   Gap closer done
+  0:00:13.988     3M / 131M  INFO   StageManager             (stage.cpp                 : 185)   STAGE == Simplification Cleanup (id: simplification_cleanup)
+  0:00:13.988     3M / 131M  INFO    General                 (simplification.cpp        : 176)   PROCEDURE == Post simplification
+  0:00:13.989     3M / 131M  INFO    General                 (graph_simplification.hpp  : 448)   Disconnection of relatively low covered edges disabled
+  0:00:13.989     3M / 131M  INFO    General                 (graph_simplification.hpp  : 485)   Complex tip clipping disabled
+  0:00:13.989     3M / 131M  INFO    General                 (graph_simplification.hpp  : 634)   Creating parallel br instance
+  0:00:13.989     3M / 131M  INFO   Simplification           (parallel_processing.hpp   : 167)   Running Tip clipper
+  0:00:13.991     3M / 131M  INFO   Simplification           (parallel_processing.hpp   : 170)   Tip clipper triggered 1 times
+  0:00:13.991     3M / 131M  INFO   Simplification           (parallel_processing.hpp   : 167)   Running Bulge remover
+  0:00:13.993     3M / 131M  INFO   Simplification           (parallel_processing.hpp   : 170)   Bulge remover triggered 0 times
+  0:00:13.993     3M / 131M  INFO   Simplification           (parallel_processing.hpp   : 167)   Running Tip clipper
+  0:00:13.995     3M / 131M  INFO   Simplification           (parallel_processing.hpp   : 170)   Tip clipper triggered 0 times
+  0:00:13.995     3M / 131M  INFO   Simplification           (parallel_processing.hpp   : 167)   Running Bulge remover
+  0:00:13.996     3M / 131M  INFO   Simplification           (parallel_processing.hpp   : 170)   Bulge remover triggered 0 times
+  0:00:13.996     3M / 131M  INFO    General                 (simplification.cpp        : 327)   Disrupting self-conjugate edges
+  0:00:13.998     3M / 131M  INFO   Simplification           (parallel_processing.hpp   : 167)   Running Removing isolated edges
+  0:00:14.004     3M / 131M  INFO   Simplification           (parallel_processing.hpp   : 170)   Removing isolated edges triggered 3731 times
+  0:00:14.005     3M / 131M  INFO    General                 (simplification.cpp        : 491)   Counting average coverage
+  0:00:14.005     3M / 131M  INFO    General                 (simplification.cpp        : 497)   Average coverage = 47.7989
+  0:00:14.005     3M / 131M  INFO   StageManager             (stage.cpp                 : 185)   STAGE == Mismatch Correction (id: mismatch_correction)
+  0:00:14.005     3M / 131M  INFO    General                 (graph_pack.cpp            :  67)   Index refill
+  0:00:14.005     3M / 131M  INFO    General                 (edge_index.hpp            : 156)   Using small index (max_id = 18878)
+  0:00:14.009     3M / 131M  INFO   K-mer Index Building     (kmer_index_builder.hpp    : 395)   Building perfect hash indices
+  0:00:14.035     3M / 131M  INFO   K-mer Index Building     (kmer_index_builder.hpp    : 431)   Index built. Total 46851 kmers, 40648 bytes occupied (6.94081 bits per kmer).
+  0:00:14.035     3M / 131M  INFO    General                 (edge_index_builders.hpp   : 252)   Collecting edge information from graph, this takes a while.
+  0:00:14.044     3M / 131M  INFO    General                 (graph_pack.cpp            :  77)   Normalizing k-mer map. Total 5146 kmers to process
+  0:00:14.046     3M / 131M  INFO    General                 (graph_pack.cpp            :  79)   Normalizing done
+  0:00:14.046     3M / 131M  INFO    General                 (mismatch_correction.cpp   : 400)   Collect potential mismatches
+  0:00:14.065     3M / 131M  INFO    General                 (mismatch_correction.cpp   : 192)   Total 36 edges (out of 230) with 326 potential mismatch positions (9.05556 positions per edge)
+  0:00:14.065     3M / 131M  INFO    General                 (mismatch_correction.cpp   : 402)   Potential mismatches collected
+  0:00:15.372     4M / 131M  INFO    General                 (sequence_mapper_notifier.h:  77)   Processed 200000 reads
+  0:00:15.504     4M / 131M  INFO    General                 (sequence_mapper_notifier.h:  95)   Total 219216 reads processed
+  0:00:15.504     4M / 131M  INFO    General                 (mismatch_correction.cpp   : 395)   All edges processed
+  0:00:15.504     3M / 131M  INFO    General                 (mismatch_correction.cpp   : 450)   Corrected 0 nucleotides
+  0:00:15.504     3M / 131M  INFO   StageManager             (stage.cpp                 : 185)   STAGE == Contig Output (id: contig_output)
+  0:00:15.504     3M / 131M  INFO    General                 (contig_output.hpp         :  16)   Outputting contigs to /var/lib/condor/execute/slot1/dir_44824/rh2939.Mamu_MiSeq-IPD_17.06.01_2.2.0.0_plus_SP.fasta/K127/before_rr.fasta
+  0:00:15.506     3M / 131M  INFO    General                 (contig_output_stage.cpp   : 151)   Writing GFA graph to /var/lib/condor/execute/slot1/dir_44824/rh2939.Mamu_MiSeq-IPD_17.06.01_2.2.0.0_plus_SP.fasta/K127/assembly_graph_after_simplification.gfa
+  0:00:15.507     3M / 131M  INFO   StageManager             (stage.cpp                 : 185)   STAGE == Paired Information Counting (id: late_pair_info_count)
+  0:00:15.508     4M / 131M  INFO    General                 (graph_pack.cpp            :  77)   Normalizing k-mer map. Total 5146 kmers to process
+  0:00:15.508     4M / 131M  INFO    General                 (graph_pack.cpp            :  79)   Normalizing done
+  0:00:15.508     4M / 131M  INFO    General                 (pair_info_count.cpp       : 339)   Min edge length for estimation: 774
+  0:00:15.508     4M / 131M  INFO    General                 (pair_info_count.cpp       : 350)   Estimating insert size for library #0
+  0:00:15.508     4M / 131M  INFO    General                 (pair_info_count.cpp       : 202)   Estimating insert size (takes a while)
+  0:00:15.521    36M / 131M  INFO    General                 (pair_info_count.cpp       :  48)   Selecting usual mapper
+  0:00:16.138    36M / 131M  INFO    General                 (sequence_mapper_notifier.h:  95)   Total 54804 reads processed
+  0:00:16.295    36M / 131M  INFO    General                 (pair_info_count.cpp       : 220)   Edge pairs: 639
+  0:00:16.296    36M / 131M  INFO    General                 (pair_info_count.cpp       : 222)   28202 paired reads (51.4597% of all) aligned to long edges
+  0:00:16.296     4M / 131M  INFO    General                 (pair_info_count.cpp       : 369)     Insert size = 327.307, deviation = 109.92, left quantile = 203, right quantile = 482, read length = 151
+  0:00:16.296     4M / 131M  INFO    General                 (pair_info_count.cpp       : 390)   Filtering data for library #0
+  0:00:16.297     4M / 131M  INFO    General                 (pair_info_count.cpp       :  48)   Selecting usual mapper
+  0:00:16.765     4M / 131M  INFO    General                 (sequence_mapper_notifier.h:  95)   Total 54804 reads processed
+  0:00:16.765     4M / 131M  INFO    General                 (pair_info_count.cpp       : 402)   Mapping library #0
+  0:00:16.766     4M / 131M  INFO    General                 (pair_info_count.cpp       : 404)   Mapping paired reads (takes a while)
+  0:00:16.766     4M / 131M  INFO    General                 (pair_info_count.cpp       : 299)   Left insert size quantile 203, right insert size quantile 482, filtering threshold 2, rounding threshold 0
+  0:00:16.772    13M / 131M  INFO    General                 (pair_info_count.cpp       :  48)   Selecting usual mapper
+  0:00:17.453    13M / 131M  INFO    General                 (sequence_mapper_notifier.h:  95)   Total 54804 reads processed
+  0:00:17.460     4M / 131M  INFO   StageManager             (stage.cpp                 : 185)   STAGE == Distance Estimation (id: distance_estimation)
+  0:00:17.460     4M / 131M  INFO    General                 (distance_estimation.cpp   : 179)   Processing library #0
+  0:00:17.460     4M / 131M  INFO    General                 (distance_estimation.cpp   : 150)   Weight Filter Done
+  0:00:17.461     4M / 131M  INFO   DistanceEstimator        (distance_estimation.hpp   : 116)   Using SIMPLE distance estimator
+  0:00:17.463     4M / 131M  INFO    General                 (distance_estimation.cpp   :  37)   Filtering info
+  0:00:17.463     4M / 131M  INFO    General                 (pair_info_filters.hpp     : 242)   Start filtering; library index size: 580
+  0:00:17.464     4M / 131M  INFO    General                 (pair_info_filters.hpp     : 263)   Done filtering; library index size: 508
+  0:00:17.464     4M / 131M  INFO    General                 (distance_estimation.cpp   : 156)   Refining clustered pair information
+  0:00:17.464     4M / 131M  INFO    General                 (distance_estimation.cpp   : 158)   The refining of clustered pair information has been finished
+  0:00:17.464     4M / 131M  INFO    General                 (distance_estimation.cpp   : 160)   Improving paired information
+  0:00:17.466     4M / 131M  INFO   PairInfoImprover         (pair_info_improver.hpp    : 104)   Paired info stats: missing = 20; contradictional = 0
+  0:00:17.467     4M / 131M  INFO   PairInfoImprover         (pair_info_improver.hpp    : 104)   Paired info stats: missing = 0; contradictional = 0
+  0:00:17.468     4M / 131M  INFO    General                 (distance_estimation.cpp   : 104)   Filling scaffolding index
+  0:00:17.468     4M / 131M  INFO   DistanceEstimator        (distance_estimation.hpp   : 116)   Using SMOOTHING distance estimator
+  0:00:17.501     4M / 131M  INFO    General                 (distance_estimation.cpp   :  37)   Filtering info
+  0:00:17.501     4M / 131M  INFO    General                 (pair_info_filters.hpp     : 242)   Start filtering; library index size: 284
+  0:00:17.501     4M / 131M  INFO    General                 (pair_info_filters.hpp     : 263)   Done filtering; library index size: 284
+  0:00:17.501     4M / 131M  INFO    General                 (distance_estimation.cpp   : 186)   Clearing raw paired index
+  0:00:17.501     4M / 131M  INFO   StageManager             (stage.cpp                 : 185)   STAGE == Repeat Resolving (id: repeat_resolving)
+  0:00:17.501     4M / 131M  INFO    General                 (repeat_resolving.cpp      :  87)   Using Path-Extend repeat resolving
+  0:00:17.501     4M / 131M  INFO    General                 (launcher.cpp              : 600)   ExSPAnder repeat resolving tool started
+  0:00:17.502     4M / 131M  INFO    General                 (launcher.cpp              : 418)   Creating main extenders, unique edge length = 2000
+  0:00:17.502     4M / 131M  INFO    General                 (extenders_logic.cpp       : 334)   Estimated coverage of library #0 is 47.7989
+  0:00:17.502     4M / 131M  INFO    General                 (extenders_logic.cpp       : 345)   Creating extender; library index size: 548
+  0:00:17.502     4M / 131M  INFO    General                 (extenders_logic.cpp       : 334)   Estimated coverage of library #0 is 47.7989
+  0:00:17.502     4M / 131M  INFO    General                 (extenders_logic.cpp       : 345)   Creating extender; library index size: 548
+  0:00:17.503     4M / 131M  INFO    General                 (extenders_logic.cpp       : 543)   Using 1 paired-end library
+  0:00:17.503     4M / 131M  INFO    General                 (extenders_logic.cpp       : 544)   Using 1 paired-end scaffolding library
+  0:00:17.503     4M / 131M  INFO    General                 (extenders_logic.cpp       : 545)   Using 0 single read libraries
+  0:00:17.503     4M / 131M  INFO    General                 (launcher.cpp              : 447)   Total number of extenders is 3
+  0:00:17.503     4M / 131M  INFO    General                 (path_extenders.cpp        :  36)   Processed 0 paths from 114 (0%)
+  0:00:17.503     4M / 131M  INFO    General                 (path_extenders.cpp        :  36)   Processed 12 paths from 114 (10%)
+  0:00:17.504     4M / 131M  INFO    General                 (path_extenders.cpp        :  36)   Processed 24 paths from 114 (21%)
+  0:00:17.504     4M / 131M  INFO    General                 (path_extenders.cpp        :  36)   Processed 36 paths from 114 (31%)
+  0:00:17.505     4M / 131M  INFO    General                 (path_extenders.cpp        :  36)   Processed 48 paths from 114 (42%)
+  0:00:17.506     4M / 131M  INFO    General                 (path_extenders.cpp        :  36)   Processed 60 paths from 114 (52%)
+  0:00:17.507     4M / 131M  INFO    General                 (path_extenders.cpp        :  36)   Processed 72 paths from 114 (63%)
+  0:00:17.508     5M / 131M  INFO    General                 (path_extenders.cpp        :  36)   Processed 84 paths from 114 (73%)
+  0:00:17.509     5M / 131M  INFO    General                 (path_extenders.cpp        :  36)   Processed 96 paths from 114 (84%)
+  0:00:17.509     5M / 131M  INFO    General                 (path_extenders.cpp        :  36)   Processed 108 paths from 114 (94%)
+  0:00:17.509     5M / 131M  INFO    General                 (launcher.cpp              : 250)   Finalizing paths
+  0:00:17.509     5M / 131M  INFO    General                 (launcher.cpp              : 252)   Deduplicating paths
+  0:00:17.510     4M / 131M  INFO    General                 (launcher.cpp              : 256)   Paths deduplicated
+  0:00:17.510     4M / 131M  INFO   PEResolver               (pe_resolver.cpp           :  60)   Removing overlaps
+  0:00:17.510     4M / 131M  INFO   PEResolver               (pe_resolver.cpp           :  63)   Sorting paths
+  0:00:17.510     4M / 131M  INFO   PEResolver               (pe_resolver.cpp           :  70)   Marking overlaps
+  0:00:17.510     4M / 131M  INFO   OverlapRemover           (overlap_remover.hpp       : 116)   Marking start/end overlaps
+  0:00:17.510     4M / 131M  INFO   OverlapRemover           (overlap_remover.hpp       : 119)   Marking remaining overlaps
+  0:00:17.510     4M / 131M  INFO   PEResolver               (pe_resolver.cpp           :  73)   Splitting paths
+  0:00:17.510     4M / 131M  INFO   PEResolver               (pe_resolver.cpp           :  78)   Deduplicating paths
+  0:00:17.510     4M / 131M  INFO   PEResolver               (pe_resolver.cpp           :  80)   Overlaps removed
+  0:00:17.510     5M / 131M  INFO    General                 (launcher.cpp              : 273)   Paths finalized
+  0:00:17.510     5M / 131M  INFO    General                 (launcher.cpp              : 454)   Closing gaps in paths
+  0:00:17.510     5M / 131M  INFO    General                 (launcher.cpp              : 484)   Gap closing completed
+  0:00:17.510     5M / 131M  INFO    General                 (launcher.cpp              : 302)   Traversing tandem repeats
+  0:00:17.511     5M / 131M  INFO    General                 (launcher.cpp              : 312)   Traversed 0 loops
+  0:00:17.511     5M / 131M  INFO    General                 (launcher.cpp              : 250)   Finalizing paths
+  0:00:17.511     5M / 131M  INFO    General                 (launcher.cpp              : 252)   Deduplicating paths
+  0:00:17.511     5M / 131M  INFO    General                 (launcher.cpp              : 256)   Paths deduplicated
+  0:00:17.511     5M / 131M  INFO   PEResolver               (pe_resolver.cpp           :  60)   Removing overlaps
+  0:00:17.511     5M / 131M  INFO   PEResolver               (pe_resolver.cpp           :  63)   Sorting paths
+  0:00:17.511     5M / 131M  INFO   PEResolver               (pe_resolver.cpp           :  70)   Marking overlaps
+  0:00:17.511     5M / 131M  INFO   OverlapRemover           (overlap_remover.hpp       : 116)   Marking start/end overlaps
+  0:00:17.511     5M / 131M  INFO   OverlapRemover           (overlap_remover.hpp       : 119)   Marking remaining overlaps
+  0:00:17.511     5M / 131M  INFO   PEResolver               (pe_resolver.cpp           :  73)   Splitting paths
+  0:00:17.511     5M / 131M  INFO   PEResolver               (pe_resolver.cpp           :  78)   Deduplicating paths
+  0:00:17.511     5M / 131M  INFO   PEResolver               (pe_resolver.cpp           :  80)   Overlaps removed
+  0:00:17.511     5M / 131M  INFO    General                 (launcher.cpp              : 273)   Paths finalized
+  0:00:17.512     5M / 131M  INFO    General                 (launcher.cpp              : 664)   ExSPAnder repeat resolving tool finished
+  0:00:17.512     4M / 131M  INFO   StageManager             (stage.cpp                 : 185)   STAGE == Contig Output (id: contig_output)
+  0:00:17.512     4M / 131M  INFO    General                 (contig_output.hpp         :  16)   Outputting contigs to /var/lib/condor/execute/slot1/dir_44824/rh2939.Mamu_MiSeq-IPD_17.06.01_2.2.0.0_plus_SP.fasta/K127/before_rr.fasta
+  0:00:17.514     4M / 131M  INFO    General                 (contig_output_stage.cpp   : 151)   Writing GFA graph to /var/lib/condor/execute/slot1/dir_44824/rh2939.Mamu_MiSeq-IPD_17.06.01_2.2.0.0_plus_SP.fasta/K127/assembly_graph_with_scaffolds.gfa
+  0:00:17.515     4M / 131M  INFO    General                 (contig_output_stage.cpp   : 165)   Outputting FastG graph to /var/lib/condor/execute/slot1/dir_44824/rh2939.Mamu_MiSeq-IPD_17.06.01_2.2.0.0_plus_SP.fasta/K127/assembly_graph.fastg
+  0:00:17.519     4M / 131M  INFO    General                 (contig_output_stage.cpp   : 196)   Breaking scaffolds
+  0:00:17.520     4M / 131M  INFO    General                 (contig_output_stage.cpp   :  98)   Outputting contigs to /var/lib/condor/execute/slot1/dir_44824/rh2939.Mamu_MiSeq-IPD_17.06.01_2.2.0.0_plus_SP.fasta/K127/final_contigs.fasta
+  0:00:17.520     4M / 131M  INFO    General                 (contig_output_stage.cpp   : 104)   Outputting FastG paths to /var/lib/condor/execute/slot1/dir_44824/rh2939.Mamu_MiSeq-IPD_17.06.01_2.2.0.0_plus_SP.fasta/K127/final_contigs.paths
+  0:00:17.521     4M / 131M  INFO    General                 (contig_output_stage.cpp   :  98)   Outputting contigs to /var/lib/condor/execute/slot1/dir_44824/rh2939.Mamu_MiSeq-IPD_17.06.01_2.2.0.0_plus_SP.fasta/K127/scaffolds.fasta
+  0:00:17.522     4M / 131M  INFO    General                 (contig_output_stage.cpp   : 104)   Outputting FastG paths to /var/lib/condor/execute/slot1/dir_44824/rh2939.Mamu_MiSeq-IPD_17.06.01_2.2.0.0_plus_SP.fasta/K127/scaffolds.paths
+  0:00:17.522     4M / 131M  INFO    General                 (contig_output_stage.cpp   : 111)   Populating GFA with scaffold paths
+  0:00:17.523     4M / 131M  INFO    General                 (pipeline.cpp              : 287)   SPAdes finished
+  0:00:17.524     1M / 131M  INFO    General                 (main.cpp                  : 136)   Assembling time: 0 hours 0 minutes 17 seconds
+
+===== K127 finished. 
+
+
+===== Copy files started. 
+
+
+== Running: /opt/conda/bin/python /opt/conda/share/spades/spades_pipeline/scripts/copy_files.py /var/lib/condor/execute/slot1/dir_44824/rh2939.Mamu_MiSeq-IPD_17.06.01_2.2.0.0_plus_SP.fasta/K127/before_rr.fasta /var/lib/condor/execute/slot1/dir_44824/rh2939.Mamu_MiSeq-IPD_17.06.01_2.2.0.0_plus_SP.fasta/before_rr.fasta /var/lib/condor/execute/slot1/dir_44824/rh2939.Mamu_MiSeq-IPD_17.06.01_2.2.0.0_plus_SP.fasta/K127/assembly_graph_after_simplification.gfa /var/lib/condor/execute/slot1/dir_44824/rh2939.Mamu_MiSeq-IPD_17.06.01_2.2.0.0_plus_SP.fasta/assembly_graph_after_simplification.gfa /var/lib/condor/execute/slot1/dir_44824/rh2939.Mamu_MiSeq-IPD_17.06.01_2.2.0.0_plus_SP.fasta/K127/final_contigs.fasta /var/lib/condor/execute/slot1/dir_44824/rh2939.Mamu_MiSeq-IPD_17.06.01_2.2.0.0_plus_SP.fasta/contigs.fasta /var/lib/condor/execute/slot1/dir_44824/rh2939.Mamu_MiSeq-IPD_17.06.01_2.2.0.0_plus_SP.fasta/K127/first_pe_contigs.fasta /var/lib/condor/execute/slot1/dir_44824/rh2939.Mamu_MiSeq-IPD_17.06.01_2.2.0.0_plus_SP.fasta/first_pe_contigs.fasta /var/lib/condor/execute/slot1/dir_44824/rh2939.Mamu_MiSeq-IPD_17.06.01_2.2.0.0_plus_SP.fasta/K127/strain_graph.gfa /var/lib/condor/execute/slot1/dir_44824/rh2939.Mamu_MiSeq-IPD_17.06.01_2.2.0.0_plus_SP.fasta/strain_graph.gfa /var/lib/condor/execute/slot1/dir_44824/rh2939.Mamu_MiSeq-IPD_17.06.01_2.2.0.0_plus_SP.fasta/K127/scaffolds.fasta /var/lib/condor/execute/slot1/dir_44824/rh2939.Mamu_MiSeq-IPD_17.06.01_2.2.0.0_plus_SP.fasta/scaffolds.fasta /var/lib/condor/execute/slot1/dir_44824/rh2939.Mamu_MiSeq-IPD_17.06.01_2.2.0.0_plus_SP.fasta/K127/scaffolds.paths /var/lib/condor/execute/slot1/dir_44824/rh2939.Mamu_MiSeq-IPD_17.06.01_2.2.0.0_plus_SP.fasta/scaffolds.paths /var/lib/condor/execute/slot1/dir_44824/rh2939.Mamu_MiSeq-IPD_17.06.01_2.2.0.0_plus_SP.fasta/K127/assembly_graph_with_scaffolds.gfa /var/lib/condor/execute/slot1/dir_44824/rh2939.Mamu_MiSeq-IPD_17.06.01_2.2.0.0_plus_SP.fasta/assembly_graph_with_scaffolds.gfa /var/lib/condor/execute/slot1/dir_44824/rh2939.Mamu_MiSeq-IPD_17.06.01_2.2.0.0_plus_SP.fasta/K127/assembly_graph.fastg /var/lib/condor/execute/slot1/dir_44824/rh2939.Mamu_MiSeq-IPD_17.06.01_2.2.0.0_plus_SP.fasta/assembly_graph.fastg /var/lib/condor/execute/slot1/dir_44824/rh2939.Mamu_MiSeq-IPD_17.06.01_2.2.0.0_plus_SP.fasta/K127/final_contigs.paths /var/lib/condor/execute/slot1/dir_44824/rh2939.Mamu_MiSeq-IPD_17.06.01_2.2.0.0_plus_SP.fasta/contigs.paths
+
+
+===== Copy files finished. 
+
+
+===== Assembling finished. 
+
+
+===== Breaking scaffolds started. 
+
+
+== Running: /opt/conda/bin/python /opt/conda/share/spades/spades_pipeline/scripts/breaking_scaffolds_script.py --result_scaffolds_filename /var/lib/condor/execute/slot1/dir_44824/rh2939.Mamu_MiSeq-IPD_17.06.01_2.2.0.0_plus_SP.fasta/scaffolds.fasta --misc_dir /var/lib/condor/execute/slot1/dir_44824/rh2939.Mamu_MiSeq-IPD_17.06.01_2.2.0.0_plus_SP.fasta/misc --threshold_for_breaking_scaffolds 3
+
+
+===== Breaking scaffolds finished. 
+
+
+===== Terminate started. 
+
+
+===== Terminate finished. 
+
+ * Assembled contigs are in /var/lib/condor/execute/slot1/dir_44824/rh2939.Mamu_MiSeq-IPD_17.06.01_2.2.0.0_plus_SP.fasta/contigs.fasta
+ * Assembled scaffolds are in /var/lib/condor/execute/slot1/dir_44824/rh2939.Mamu_MiSeq-IPD_17.06.01_2.2.0.0_plus_SP.fasta/scaffolds.fasta
+ * Paths in the assembly graph corresponding to the contigs are in /var/lib/condor/execute/slot1/dir_44824/rh2939.Mamu_MiSeq-IPD_17.06.01_2.2.0.0_plus_SP.fasta/contigs.paths
+ * Paths in the assembly graph corresponding to the scaffolds are in /var/lib/condor/execute/slot1/dir_44824/rh2939.Mamu_MiSeq-IPD_17.06.01_2.2.0.0_plus_SP.fasta/scaffolds.paths
+ * Assembly graph is in /var/lib/condor/execute/slot1/dir_44824/rh2939.Mamu_MiSeq-IPD_17.06.01_2.2.0.0_plus_SP.fasta/assembly_graph.fastg
+ * Assembly graph in GFA format is in /var/lib/condor/execute/slot1/dir_44824/rh2939.Mamu_MiSeq-IPD_17.06.01_2.2.0.0_plus_SP.fasta/assembly_graph_with_scaffolds.gfa
+
+======= SPAdes pipeline finished WITH WARNINGS!
+
+=== Error correction and assembling warnings:
+ * 0:00:11.884     3M / 131M  WARN    General                 (kmer_coverage_model.cpp   : 366)   Failed to determine erroneous kmer threshold. Threshold set to: 29
+======= Warnings saved to /var/lib/condor/execute/slot1/dir_44824/rh2939.Mamu_MiSeq-IPD_17.06.01_2.2.0.0_plus_SP.fasta/warnings.log
+
+SPAdes log can be found here: /var/lib/condor/execute/slot1/dir_44824/rh2939.Mamu_MiSeq-IPD_17.06.01_2.2.0.0_plus_SP.fasta/spades.log
+
+Thank you for using SPAdes!
+Command line: /opt/conda/bin/spades.py	--pe1-1	/var/lib/condor/execute/slot1/dir_44824/rh2939.Mamu_MiSeq-IPD_17.06.01_2.2.0.0_plus_SP.fasta.novel.hq.R1.fastq	--pe1-2	/var/lib/condor/execute/slot1/dir_44824/rh2939.Mamu_MiSeq-IPD_17.06.01_2.2.0.0_plus_SP.fasta.novel.hq.R2.fastq	--isolate	--phred-offset	33	-k	127	-o	/var/lib/condor/execute/slot1/dir_44824/rh2939.Mamu_MiSeq-IPD_17.06.01_2.2.0.0_plus_SP.fasta	
+
+System information:
+  SPAdes version: 3.15.2
+  Python version: 3.7.10
+  OS: Linux-5.0.8-1.el7.elrepo.x86_64-x86_64-with-debian-9.5
+
+Output dir: /var/lib/condor/execute/slot1/dir_44824/rh2939.Mamu_MiSeq-IPD_17.06.01_2.2.0.0_plus_SP.fasta
+Mode: ONLY assembling (without read error correction)
+Debug mode is turned OFF
+
+Dataset parameters:
+  Isolate mode
+  Reads:
+    Library number: 1, library type: paired-end
+      orientation: fr
+      left reads: ['/var/lib/condor/execute/slot1/dir_44824/rh2939.Mamu_MiSeq-IPD_17.06.01_2.2.0.0_plus_SP.fasta.novel.hq.R1.fastq']
+      right reads: ['/var/lib/condor/execute/slot1/dir_44824/rh2939.Mamu_MiSeq-IPD_17.06.01_2.2.0.0_plus_SP.fasta.novel.hq.R2.fastq']
+      interlaced reads: not specified
+      single reads: not specified
+      merged reads: not specified
+Assembly parameters:
+  k: [127]
+  Repeat resolution is enabled
+  Mismatch careful mode is turned OFF
+  MismatchCorrector will be SKIPPED
+  Coverage cutoff is turned OFF
+Other parameters:
+  Dir for temp files: /var/lib/condor/execute/slot1/dir_44824/rh2939.Mamu_MiSeq-IPD_17.06.01_2.2.0.0_plus_SP.fasta/tmp
+  Threads: 16
+  Memory limit (in Gb): 250
+
+
+======= SPAdes pipeline started. Log can be found here: /var/lib/condor/execute/slot1/dir_44824/rh2939.Mamu_MiSeq-IPD_17.06.01_2.2.0.0_plus_SP.fasta/spades.log
+
+/var/lib/condor/execute/slot1/dir_44824/rh2939.Mamu_MiSeq-IPD_17.06.01_2.2.0.0_plus_SP.fasta.novel.hq.R1.fastq: max reads length: 151
+/var/lib/condor/execute/slot1/dir_44824/rh2939.Mamu_MiSeq-IPD_17.06.01_2.2.0.0_plus_SP.fasta.novel.hq.R2.fastq: max reads length: 151
+
+Reads length: 151
+
+
+===== Before start started. 
+
+
+===== Assembling started. 
+
+
+===== K127 started. 
+
+
+== Running: /opt/conda/bin/spades-core /var/lib/condor/execute/slot1/dir_44824/rh2939.Mamu_MiSeq-IPD_17.06.01_2.2.0.0_plus_SP.fasta/K127/configs/config.info /var/lib/condor/execute/slot1/dir_44824/rh2939.Mamu_MiSeq-IPD_17.06.01_2.2.0.0_plus_SP.fasta/K127/configs/isolate_mode.info
+
+  0:00:00.000     1M / 11M   INFO    General                 (main.cpp                  :  99)   Loaded config from /var/lib/condor/execute/slot1/dir_44824/rh2939.Mamu_MiSeq-IPD_17.06.01_2.2.0.0_plus_SP.fasta/K127/configs/config.info
+  0:00:00.003     1M / 11M   INFO    General                 (main.cpp                  :  99)   Loaded config from /var/lib/condor/execute/slot1/dir_44824/rh2939.Mamu_MiSeq-IPD_17.06.01_2.2.0.0_plus_SP.fasta/K127/configs/isolate_mode.info
+  0:00:00.004     1M / 11M   INFO    General                 (memory_limit.cpp          :  48)   Memory limit set to 250 Gb
+  0:00:00.005     1M / 11M   INFO    General                 (main.cpp                  : 107)   Starting SPAdes, built from N/A, git revision N/A
+  0:00:00.006     1M / 11M   INFO    General                 (main.cpp                  : 108)   Maximum k-mer length: 128
+  0:00:00.007     1M / 11M   INFO    General                 (main.cpp                  : 109)   Assembling dataset (/var/lib/condor/execute/slot1/dir_44824/rh2939.Mamu_MiSeq-IPD_17.06.01_2.2.0.0_plus_SP.fasta/dataset.info) with K=127
+  0:00:00.008     1M / 11M   INFO    General                 (main.cpp                  : 110)   Maximum # of threads to use (adjusted due to OMP capabilities): 1
+  0:00:00.010     1M / 11M   INFO    General                 (pipeline.cpp              : 212)   SPAdes started
+  0:00:00.011     1M / 11M   INFO    General                 (pipeline.cpp              : 225)   Starting from stage: read_conversion
+  0:00:00.012     1M / 11M   INFO    General                 (pipeline.cpp              : 231)   Two-step repeat resolution disabled
+  0:00:00.013     1M / 11M   INFO   GraphCore                (graph_core.hpp            : 672)   Graph created, vertex min_id: 3, edge min_id: 3
+  0:00:00.014     1M / 11M   INFO   GraphCore                (graph_core.hpp            : 673)   Vertex size: 48, edge size: 40
+  0:00:00.015     1M / 11M   INFO    General                 (edge_index.hpp            : 113)   Size of edge index entries: 12/8
+  0:00:00.015     1M / 11M   INFO    General                 (pipeline.cpp              : 242)   Will need read mapping, kmer mapper will be attached
+  0:00:00.016     1M / 11M   INFO   StageManager             (stage.cpp                 : 185)   STAGE == Binary Read Conversion (id: read_conversion)
+  0:00:00.016     1M / 11M   INFO    General                 (read_converter.cpp        :  72)   Converting reads to binary format for library #0 (takes a while)
+  0:00:00.017     1M / 11M   INFO    General                 (read_converter.cpp        :  73)   Converting paired reads
+  0:00:00.101    23M / 23M   INFO    General                 (binary_converter.cpp      : 111)   6983 reads written
+  0:00:00.102     1M / 13M   INFO    General                 (read_converter.cpp        :  81)   Converting single reads
+  0:00:00.104    11M / 15M   INFO    General                 (binary_converter.cpp      : 111)   0 reads written
+  0:00:00.105     1M / 15M   INFO    General                 (read_converter.cpp        :  87)   Converting merged reads
+  0:00:00.106    11M / 15M   INFO    General                 (binary_converter.cpp      : 111)   0 reads written
+  0:00:00.107     1M / 15M   INFO   StageManager             (stage.cpp                 : 185)   STAGE == de Bruijn graph construction (id: construction)
+  0:00:00.108     1M / 15M   INFO    General                 (construction.cpp          : 153)   Max read length 151
+  0:00:00.108     1M / 15M   INFO    General                 (construction.cpp          : 159)   Average read length 151
+  0:00:00.108     1M / 15M   INFO    General                 (stage.cpp                 : 117)   PROCEDURE == k+1-mer counting (id: construction:kpomer_counting)
+  0:00:00.109     1M / 15M   INFO    General                 (kmer_index_builder.hpp    : 243)   Splitting kmer instances into 10 files using 1 threads. This might take a while.
+  0:00:00.109     1M / 15M   INFO    General                 (file_limit.hpp            :  32)   Open file limit set to 1048576
+  0:00:00.110     1M / 15M   INFO    General                 (kmer_splitter.hpp         :  93)   Memory available for splitting buffers: 83.3333 Gb
+  0:00:00.110     1M / 15M   INFO    General                 (kmer_splitter.hpp         : 101)   Using cell size of 1677721
+  0:00:00.330     1M / 37M   INFO    General                 (kmer_splitters.hpp        : 131)   Used 27932 reads
+  0:00:00.331     1M / 37M   INFO    General                 (kmer_index_builder.hpp    : 249)   Starting k-mer counting.
+  0:00:00.354     1M / 37M   INFO    General                 (kmer_index_builder.hpp    : 260)   K-mer counting done. There are 102346 kmers in total.
+  0:00:00.355     1M / 37M   INFO    General                 (stage.cpp                 : 117)   PROCEDURE == Extension index construction (id: construction:extension_index_construction)
+  0:00:00.355     1M / 37M   INFO   K-mer Index Building     (kmer_index_builder.hpp    : 438)   Building kmer index
+  0:00:00.356     1M / 37M   INFO    General                 (kmer_index_builder.hpp    : 243)   Splitting kmer instances into 10 files using 1 threads. This might take a while.
+  0:00:00.356     1M / 37M   INFO    General                 (file_limit.hpp            :  32)   Open file limit set to 1048576
+  0:00:00.356     1M / 37M   INFO    General                 (kmer_splitter.hpp         :  93)   Memory available for splitting buffers: 83.3333 Gb
+  0:00:00.356     1M / 37M   INFO    General                 (kmer_splitter.hpp         : 101)   Using cell size of 1677721
+  0:00:00.493   601M / 601M  INFO    General                 (kmer_splitters.hpp        : 194)   Processed 102346 kmers
+  0:00:00.494   601M / 601M  INFO    General                 (kmer_splitters.hpp        : 199)   Used 102346 kmers.
+  0:00:00.495     1M / 42M   INFO    General                 (kmer_index_builder.hpp    : 249)   Starting k-mer counting.
+  0:00:00.514     1M / 42M   INFO    General                 (kmer_index_builder.hpp    : 260)   K-mer counting done. There are 105102 kmers in total.
+  0:00:00.515     1M / 42M   INFO   K-mer Index Building     (kmer_index_builder.hpp    : 395)   Building perfect hash indices
+  0:00:00.547     1M / 42M   INFO   K-mer Index Building     (kmer_index_builder.hpp    : 431)   Index built. Total 105102 kmers, 83616 bytes occupied (6.36456 bits per kmer).
+  0:00:00.548     1M / 42M   INFO    General                 (kmer_index_builder.hpp    : 169)   Merging final buckets.
+  0:00:00.559     1M / 42M   INFO   DeBruijnExtensionIndexBu (kmer_extension_index_build: 100)   Building k-mer extensions from k+1-mers
+  0:00:00.630     1M / 42M   INFO   DeBruijnExtensionIndexBu (kmer_extension_index_build: 105)   Building k-mer extensions from k+1-mers finished.
+  0:00:00.632     1M / 42M   INFO    General                 (stage.cpp                 : 117)   PROCEDURE == Condensing graph (id: construction:graph_condensing)
+  0:00:00.633     1M / 42M   INFO   UnbranchingPathExtractor (debruijn_graph_constructor: 354)   Extracting unbranching paths
+  0:00:00.747     1M / 42M   INFO   UnbranchingPathExtractor (debruijn_graph_constructor: 373)   Extracting unbranching paths finished. 5299 sequences extracted
+  0:00:00.825     1M / 42M   INFO   UnbranchingPathExtractor (debruijn_graph_constructor: 309)   Collecting perfect loops
+  0:00:00.845     1M / 42M   INFO   UnbranchingPathExtractor (debruijn_graph_constructor: 342)   Collecting perfect loops finished. 0 loops collected
+  0:00:00.846     1M / 42M   INFO    General                 (debruijn_graph_constructor: 487)   Total 10598 edges to create
+  0:00:00.847     2M / 42M   INFO    General                 (debruijn_graph_constructor: 489)   Collecting link records
+  0:00:00.871     2M / 42M   INFO    General                 (debruijn_graph_constructor: 491)   Ordering link records
+  0:00:00.873     2M / 42M   INFO    General                 (debruijn_graph_constructor: 493)   Sorting done
+  0:00:00.875     2M / 42M   INFO    General                 (debruijn_graph_constructor: 503)   Total 8055 vertices to create
+  0:00:00.876     3M / 42M   INFO    General                 (debruijn_graph_constructor: 506)   Connecting the graph
+  0:00:00.886     2M / 42M   INFO    General                 (stage.cpp                 : 117)   PROCEDURE == Filling coverage indices (PHM) (id: construction:coverage_filling_phm)
+  0:00:00.886     2M / 42M   INFO   K-mer Index Building     (kmer_index_builder.hpp    : 395)   Building perfect hash indices
+  0:00:00.926     2M / 42M   INFO   K-mer Index Building     (kmer_index_builder.hpp    : 431)   Index built. Total 102346 kmers, 81488 bytes occupied (6.36961 bits per kmer).
+  0:00:00.927     3M / 42M   INFO    General                 (coverage_hash_map_builder.:  47)   Collecting k-mer coverage information from reads, this takes a while.
+  0:00:01.135     3M / 42M   INFO    General                 (construction.cpp          : 430)   Filling coverage and flanking coverage from PHM
+  0:00:01.244     3M / 42M   INFO    General                 (coverage_filling.hpp      :  82)   Processed 10598 edges
+  0:00:01.249     2M / 42M   INFO   StageManager             (stage.cpp                 : 185)   STAGE == EC Threshold Finding (id: ec_threshold_finder)
+  0:00:01.250     2M / 42M   INFO    General                 (kmer_coverage_model.cpp   : 181)   Kmer coverage valley at: 16
+  0:00:01.251     2M / 42M   INFO    General                 (kmer_coverage_model.cpp   : 201)   K-mer histogram maximum: 18
+  0:00:01.251     2M / 42M   INFO    General                 (kmer_coverage_model.cpp   : 237)   Estimated median coverage: 19. Coverage mad: 2.9652
+  0:00:01.251     2M / 42M   INFO    General                 (kmer_coverage_model.cpp   : 259)   Fitting coverage model
+  0:00:01.280     2M / 42M   INFO    General                 (kmer_coverage_model.cpp   : 295)   ... iteration 2
+  0:00:01.352     2M / 42M   INFO    General                 (kmer_coverage_model.cpp   : 295)   ... iteration 4
+  0:00:01.586     2M / 42M   INFO    General                 (kmer_coverage_model.cpp   : 295)   ... iteration 8
+  0:00:02.046     2M / 42M   INFO    General                 (kmer_coverage_model.cpp   : 295)   ... iteration 16
+  0:00:02.967     2M / 42M   INFO    General                 (kmer_coverage_model.cpp   : 295)   ... iteration 32
+  0:00:04.636     2M / 42M   INFO    General                 (kmer_coverage_model.cpp   : 295)   ... iteration 64
+  0:00:05.085     2M / 42M   INFO    General                 (kmer_coverage_model.cpp   : 309)   Fitted mean coverage: 23.4964. Fitted coverage std. dev: 12.4632
+  0:00:05.086     2M / 42M   WARN    General                 (kmer_coverage_model.cpp   : 327)   Valley value was estimated improperly, reset to 3
+  0:00:05.087     2M / 42M   INFO    General                 (kmer_coverage_model.cpp   : 334)   Probability of erroneous kmer at valley: 1
+  0:00:05.087     2M / 42M   WARN    General                 (kmer_coverage_model.cpp   : 366)   Failed to determine erroneous kmer threshold. Threshold set to: 3
+  0:00:05.087     2M / 42M   INFO    General                 (kmer_coverage_model.cpp   : 375)   Estimated genome size (ignoring repeats): 19626
+  0:00:05.087     2M / 42M   INFO    General                 (genomic_info_filler.cpp   :  57)   Failed to estimate mean coverage
+  0:00:05.087     2M / 42M   INFO    General                 (genomic_info_filler.cpp   :  70)   EC coverage threshold value was calculated as 3
+  0:00:05.087     2M / 42M   INFO    General                 (genomic_info_filler.cpp   :  71)   Trusted kmer low bound: 0
+  0:00:05.087     2M / 42M   INFO   StageManager             (stage.cpp                 : 185)   STAGE == Gap Closer (id: early_gapcloser)
+  0:00:05.103    11M / 42M   INFO    General                 (edge_index.hpp            : 113)   Size of edge index entries: 12/8
+  0:00:05.114    11M / 42M   INFO    General                 (gap_closer.cpp            : 101)   Total edges in tip neighborhood: 7280 out of 10598, length: 165377
+  0:00:05.116    11M / 42M   INFO    General                 (edge_index.hpp            : 167)   Using small index (max_id = 10653)
+  0:00:05.135    11M / 42M   INFO   K-mer Index Building     (kmer_index_builder.hpp    : 395)   Building perfect hash indices
+  0:00:05.216    11M / 42M   INFO   K-mer Index Building     (kmer_index_builder.hpp    : 431)   Index built. Total 94098 kmers, 68720 bytes occupied (5.84242 bits per kmer).
+  0:00:05.217    12M / 42M   INFO    General                 (edge_index_builders.hpp   : 265)   Collecting edge information from graph, this takes a while.
+  0:00:05.389    12M / 42M   INFO    General                 (sequence_mapper_notifier.h:  95)   Total 6983 reads processed
+  0:00:05.407    11M / 42M   INFO    General                 (gap_closer.cpp            : 452)   Initializing gap closer
+  0:00:05.408    11M / 42M   INFO   GapCloser                (gap_closer.cpp            : 359)   Closing short gaps
+  0:00:05.424    12M / 42M   INFO   GapCloser                (gap_closer.cpp            : 391)   Closing short gaps complete: filled 117 gaps after checking 499 candidates
+  0:00:05.427    12M / 42M   INFO    General                 (gap_closer.cpp            : 456)   Gap closer done
+  0:00:05.432     2M / 42M   INFO   StageManager             (stage.cpp                 : 185)   STAGE == Raw Simplification (id: raw_simplification)
+  0:00:05.433     2M / 42M   INFO    General                 (simplification.cpp        : 127)   PROCEDURE == Initial cleaning
+  0:00:05.433     2M / 42M   INFO    General                 (simplification.cpp        :  61)   Most init cleaning disabled on main iteration
+  0:00:05.434     2M / 42M   INFO   Simplification           (parallel_processing.hpp   : 167)   Running Self conjugate edge remover
+  0:00:05.437     2M / 42M   INFO   Simplification           (parallel_processing.hpp   : 170)   Self conjugate edge remover triggered 0 times
+  0:00:05.438     2M / 42M   INFO   StageManager             (stage.cpp                 : 185)   STAGE == Simplification (id: simplification)
+  0:00:05.438     2M / 42M   INFO    General                 (simplification.cpp        : 368)   Graph simplification started
+  0:00:05.438     2M / 42M   INFO    General                 (graph_simplification.hpp  : 634)   Creating parallel br instance
+  0:00:05.438     2M / 42M   INFO    General                 (simplification.cpp        : 373)   PROCEDURE == Simplification cycle, iteration 1
+  0:00:05.439     2M / 42M   INFO   Simplification           (parallel_processing.hpp   : 167)   Running Tip clipper
+  0:00:05.464     2M / 42M   INFO   Simplification           (parallel_processing.hpp   : 170)   Tip clipper triggered 1293 times
+  0:00:05.465     2M / 42M   INFO   Simplification           (parallel_processing.hpp   : 167)   Running Bulge remover
+  0:00:05.471     2M / 42M   INFO   Simplification           (parallel_processing.hpp   : 170)   Bulge remover triggered 3 times
+  0:00:05.472     2M / 42M   INFO   Simplification           (parallel_processing.hpp   : 167)   Running Low coverage edge remover
+  0:00:05.475     2M / 42M   INFO   Simplification           (parallel_processing.hpp   : 170)   Low coverage edge remover triggered 0 times
+  0:00:05.476     2M / 42M   INFO    General                 (simplification.cpp        : 373)   PROCEDURE == Simplification cycle, iteration 2
+  0:00:05.476     2M / 42M   INFO   Simplification           (parallel_processing.hpp   : 167)   Running Tip clipper
+  0:00:05.476     2M / 42M   INFO   Simplification           (parallel_processing.hpp   : 170)   Tip clipper triggered 2 times
+  0:00:05.476     2M / 42M   INFO   Simplification           (parallel_processing.hpp   : 167)   Running Bulge remover
+  0:00:05.476     2M / 42M   INFO   Simplification           (parallel_processing.hpp   : 170)   Bulge remover triggered 0 times
+  0:00:05.476     2M / 42M   INFO   Simplification           (parallel_processing.hpp   : 167)   Running Low coverage edge remover
+  0:00:05.476     2M / 42M   INFO   Simplification           (parallel_processing.hpp   : 170)   Low coverage edge remover triggered 0 times
+  0:00:05.476     2M / 42M   INFO    General                 (simplification.cpp        : 373)   PROCEDURE == Simplification cycle, iteration 3
+  0:00:05.477     2M / 42M   INFO   Simplification           (parallel_processing.hpp   : 167)   Running Tip clipper
+  0:00:05.477     2M / 42M   INFO   Simplification           (parallel_processing.hpp   : 170)   Tip clipper triggered 0 times
+  0:00:05.477     2M / 42M   INFO   Simplification           (parallel_processing.hpp   : 167)   Running Bulge remover
+  0:00:05.477     2M / 42M   INFO   Simplification           (parallel_processing.hpp   : 170)   Bulge remover triggered 0 times
+  0:00:05.477     2M / 42M   INFO   Simplification           (parallel_processing.hpp   : 167)   Running Low coverage edge remover
+  0:00:05.477     2M / 42M   INFO   Simplification           (parallel_processing.hpp   : 170)   Low coverage edge remover triggered 0 times
+  0:00:05.477     2M / 42M   INFO    General                 (simplification.cpp        : 373)   PROCEDURE == Simplification cycle, iteration 4
+  0:00:05.477     2M / 42M   INFO   Simplification           (parallel_processing.hpp   : 167)   Running Tip clipper
+  0:00:05.477     2M / 42M   INFO   Simplification           (parallel_processing.hpp   : 170)   Tip clipper triggered 0 times
+  0:00:05.477     2M / 42M   INFO   Simplification           (parallel_processing.hpp   : 167)   Running Bulge remover
+  0:00:05.478     2M / 42M   INFO   Simplification           (parallel_processing.hpp   : 170)   Bulge remover triggered 0 times
+  0:00:05.478     2M / 42M   INFO   Simplification           (parallel_processing.hpp   : 167)   Running Low coverage edge remover
+  0:00:05.478     2M / 42M   INFO   Simplification           (parallel_processing.hpp   : 170)   Low coverage edge remover triggered 2 times
+  0:00:05.478     2M / 42M   INFO    General                 (simplification.cpp        : 373)   PROCEDURE == Simplification cycle, iteration 5
+  0:00:05.478     2M / 42M   INFO   Simplification           (parallel_processing.hpp   : 167)   Running Tip clipper
+  0:00:05.478     2M / 42M   INFO   Simplification           (parallel_processing.hpp   : 170)   Tip clipper triggered 1 times
+  0:00:05.478     2M / 42M   INFO   Simplification           (parallel_processing.hpp   : 167)   Running Bulge remover
+  0:00:05.479     2M / 42M   INFO   Simplification           (parallel_processing.hpp   : 170)   Bulge remover triggered 0 times
+  0:00:05.479     2M / 42M   INFO   Simplification           (parallel_processing.hpp   : 167)   Running Low coverage edge remover
+  0:00:05.479     2M / 42M   INFO   Simplification           (parallel_processing.hpp   : 170)   Low coverage edge remover triggered 0 times
+  0:00:05.479     2M / 42M   INFO    General                 (simplification.cpp        : 373)   PROCEDURE == Simplification cycle, iteration 6
+  0:00:05.479     2M / 42M   INFO   Simplification           (parallel_processing.hpp   : 167)   Running Tip clipper
+  0:00:05.479     2M / 42M   INFO   Simplification           (parallel_processing.hpp   : 170)   Tip clipper triggered 0 times
+  0:00:05.479     2M / 42M   INFO   Simplification           (parallel_processing.hpp   : 167)   Running Bulge remover
+  0:00:05.479     2M / 42M   INFO   Simplification           (parallel_processing.hpp   : 170)   Bulge remover triggered 0 times
+  0:00:05.479     2M / 42M   INFO   Simplification           (parallel_processing.hpp   : 167)   Running Low coverage edge remover
+  0:00:05.479     2M / 42M   INFO   Simplification           (parallel_processing.hpp   : 170)   Low coverage edge remover triggered 0 times
+  0:00:05.480     2M / 42M   INFO    General                 (simplification.cpp        : 373)   PROCEDURE == Simplification cycle, iteration 7
+  0:00:05.480     2M / 42M   INFO   Simplification           (parallel_processing.hpp   : 167)   Running Tip clipper
+  0:00:05.480     2M / 42M   INFO   Simplification           (parallel_processing.hpp   : 170)   Tip clipper triggered 0 times
+  0:00:05.480     2M / 42M   INFO   Simplification           (parallel_processing.hpp   : 167)   Running Bulge remover
+  0:00:05.480     2M / 42M   INFO   Simplification           (parallel_processing.hpp   : 170)   Bulge remover triggered 0 times
+  0:00:05.480     2M / 42M   INFO   Simplification           (parallel_processing.hpp   : 167)   Running Low coverage edge remover
+  0:00:05.481     2M / 42M   INFO   Simplification           (parallel_processing.hpp   : 170)   Low coverage edge remover triggered 0 times
+  0:00:05.481     2M / 42M   INFO    General                 (simplification.cpp        : 373)   PROCEDURE == Simplification cycle, iteration 8
+  0:00:05.481     2M / 42M   INFO   Simplification           (parallel_processing.hpp   : 167)   Running Tip clipper
+  0:00:05.481     2M / 42M   INFO   Simplification           (parallel_processing.hpp   : 170)   Tip clipper triggered 0 times
+  0:00:05.481     2M / 42M   INFO   Simplification           (parallel_processing.hpp   : 167)   Running Bulge remover
+  0:00:05.481     2M / 42M   INFO   Simplification           (parallel_processing.hpp   : 170)   Bulge remover triggered 0 times
+  0:00:05.481     2M / 42M   INFO   Simplification           (parallel_processing.hpp   : 167)   Running Low coverage edge remover
+  0:00:05.481     2M / 42M   INFO   Simplification           (parallel_processing.hpp   : 170)   Low coverage edge remover triggered 0 times
+  0:00:05.482     2M / 42M   INFO    General                 (simplification.cpp        : 373)   PROCEDURE == Simplification cycle, iteration 9
+  0:00:05.482     2M / 42M   INFO   Simplification           (parallel_processing.hpp   : 167)   Running Tip clipper
+  0:00:05.482     2M / 42M   INFO   Simplification           (parallel_processing.hpp   : 170)   Tip clipper triggered 0 times
+  0:00:05.482     2M / 42M   INFO   Simplification           (parallel_processing.hpp   : 167)   Running Bulge remover
+  0:00:05.482     2M / 42M   INFO   Simplification           (parallel_processing.hpp   : 170)   Bulge remover triggered 0 times
+  0:00:05.482     2M / 42M   INFO   Simplification           (parallel_processing.hpp   : 167)   Running Low coverage edge remover
+  0:00:05.482     2M / 42M   INFO   Simplification           (parallel_processing.hpp   : 170)   Low coverage edge remover triggered 1 times
+  0:00:05.482     2M / 42M   INFO    General                 (simplification.cpp        : 373)   PROCEDURE == Simplification cycle, iteration 10
+  0:00:05.482     2M / 42M   INFO   Simplification           (parallel_processing.hpp   : 167)   Running Tip clipper
+  0:00:05.483     2M / 42M   INFO   Simplification           (parallel_processing.hpp   : 170)   Tip clipper triggered 0 times
+  0:00:05.483     2M / 42M   INFO   Simplification           (parallel_processing.hpp   : 167)   Running Bulge remover
+  0:00:05.483     2M / 42M   INFO   Simplification           (parallel_processing.hpp   : 170)   Bulge remover triggered 0 times
+  0:00:05.483     2M / 42M   INFO   Simplification           (parallel_processing.hpp   : 167)   Running Low coverage edge remover
+  0:00:05.483     2M / 42M   INFO   Simplification           (parallel_processing.hpp   : 170)   Low coverage edge remover triggered 0 times
+  0:00:05.483     2M / 42M   INFO    General                 (simplification.cpp        : 373)   PROCEDURE == Simplification cycle, iteration 11
+  0:00:05.483     2M / 42M   INFO   Simplification           (parallel_processing.hpp   : 167)   Running Tip clipper
+  0:00:05.488     2M / 42M   INFO   Simplification           (parallel_processing.hpp   : 170)   Tip clipper triggered 0 times
+  0:00:05.488     2M / 42M   INFO   Simplification           (parallel_processing.hpp   : 167)   Running Bulge remover
+  0:00:05.491     2M / 42M   INFO   Simplification           (parallel_processing.hpp   : 170)   Bulge remover triggered 0 times
+  0:00:05.492     2M / 42M   INFO   Simplification           (parallel_processing.hpp   : 167)   Running Low coverage edge remover
+  0:00:05.494     2M / 42M   INFO   Simplification           (parallel_processing.hpp   : 170)   Low coverage edge remover triggered 0 times
+  0:00:05.495     2M / 42M   INFO   StageManager             (stage.cpp                 : 185)   STAGE == Gap Closer (id: late_gapcloser)
+  0:00:05.510    11M / 42M   INFO    General                 (edge_index.hpp            : 113)   Size of edge index entries: 12/8
+  0:00:05.518    12M / 42M   INFO    General                 (gap_closer.cpp            : 101)   Total edges in tip neighborhood: 5311 out of 5326, length: 176797
+  0:00:05.520    12M / 42M   INFO    General                 (edge_index.hpp            : 167)   Using small index (max_id = 21303)
+  0:00:05.534    12M / 42M   INFO   K-mer Index Building     (kmer_index_builder.hpp    : 395)   Building perfect hash indices
+  0:00:05.602    12M / 42M   INFO   K-mer Index Building     (kmer_index_builder.hpp    : 431)   Index built. Total 89565 kmers, 93438 bytes occupied (8.34594 bits per kmer).
+  0:00:05.603    12M / 42M   INFO    General                 (edge_index_builders.hpp   : 265)   Collecting edge information from graph, this takes a while.
+  0:00:05.733    13M / 42M   INFO    General                 (sequence_mapper_notifier.h:  95)   Total 6983 reads processed
+  0:00:05.753    12M / 42M   INFO    General                 (gap_closer.cpp            : 452)   Initializing gap closer
+  0:00:05.753    12M / 42M   INFO   GapCloser                (gap_closer.cpp            : 359)   Closing short gaps
+  0:00:05.762    12M / 42M   INFO   GapCloser                (gap_closer.cpp            : 391)   Closing short gaps complete: filled 23 gaps after checking 346 candidates
+  0:00:05.764    12M / 42M   INFO    General                 (gap_closer.cpp            : 456)   Gap closer done
+  0:00:05.770     2M / 42M   INFO   StageManager             (stage.cpp                 : 185)   STAGE == Simplification Cleanup (id: simplification_cleanup)
+  0:00:05.770     2M / 42M   INFO    General                 (simplification.cpp        : 176)   PROCEDURE == Post simplification
+  0:00:05.771     2M / 42M   INFO    General                 (graph_simplification.hpp  : 448)   Disconnection of relatively low covered edges disabled
+  0:00:05.771     2M / 42M   INFO    General                 (graph_simplification.hpp  : 485)   Complex tip clipping disabled
+  0:00:05.771     2M / 42M   INFO    General                 (graph_simplification.hpp  : 634)   Creating parallel br instance
+  0:00:05.771     2M / 42M   INFO   Simplification           (parallel_processing.hpp   : 167)   Running Tip clipper
+  0:00:05.775     2M / 42M   INFO   Simplification           (parallel_processing.hpp   : 170)   Tip clipper triggered 0 times
+  0:00:05.775     2M / 42M   INFO   Simplification           (parallel_processing.hpp   : 167)   Running Bulge remover
+  0:00:05.777     2M / 42M   INFO   Simplification           (parallel_processing.hpp   : 170)   Bulge remover triggered 0 times
+  0:00:05.778     2M / 42M   INFO   Simplification           (parallel_processing.hpp   : 167)   Running Tip clipper
+  0:00:05.781     2M / 42M   INFO   Simplification           (parallel_processing.hpp   : 170)   Tip clipper triggered 0 times
+  0:00:05.781     2M / 42M   INFO   Simplification           (parallel_processing.hpp   : 167)   Running Bulge remover
+  0:00:05.783     2M / 42M   INFO   Simplification           (parallel_processing.hpp   : 170)   Bulge remover triggered 0 times
+  0:00:05.783     2M / 42M   INFO    General                 (simplification.cpp        : 327)   Disrupting self-conjugate edges
+  0:00:05.785     2M / 42M   INFO   Simplification           (parallel_processing.hpp   : 167)   Running Removing isolated edges
+  0:00:05.793     2M / 42M   INFO   Simplification           (parallel_processing.hpp   : 170)   Removing isolated edges triggered 2590 times
+  0:00:05.794     2M / 42M   INFO    General                 (simplification.cpp        : 491)   Counting average coverage
+  0:00:05.794     2M / 42M   INFO    General                 (simplification.cpp        : 497)   Average coverage = 11.8768
+  0:00:05.794     2M / 42M   INFO   StageManager             (stage.cpp                 : 185)   STAGE == Mismatch Correction (id: mismatch_correction)
+  0:00:05.795     2M / 42M   INFO    General                 (graph_pack.cpp            :  67)   Index refill
+  0:00:05.795     2M / 42M   INFO    General                 (edge_index.hpp            : 156)   Using small index (max_id = 21303)
+  0:00:05.796     2M / 42M   INFO   K-mer Index Building     (kmer_index_builder.hpp    : 395)   Building perfect hash indices
+  0:00:05.804     2M / 42M   INFO   K-mer Index Building     (kmer_index_builder.hpp    : 431)   Index built. Total 16958 kmers, 14596 bytes occupied (6.88572 bits per kmer).
+  0:00:05.805     2M / 42M   INFO    General                 (edge_index_builders.hpp   : 252)   Collecting edge information from graph, this takes a while.
+  0:00:05.808     2M / 42M   INFO    General                 (graph_pack.cpp            :  77)   Normalizing k-mer map. Total 768 kmers to process
+  0:00:05.809     2M / 42M   INFO    General                 (graph_pack.cpp            :  79)   Normalizing done
+  0:00:05.810     2M / 42M   INFO    General                 (mismatch_correction.cpp   : 400)   Collect potential mismatches
+  0:00:05.812     2M / 42M   INFO    General                 (mismatch_correction.cpp   : 192)   Total 10 edges (out of 100) with 10 potential mismatch positions (1 positions per edge)
+  0:00:05.812     2M / 42M   INFO    General                 (mismatch_correction.cpp   : 402)   Potential mismatches collected
+  0:00:06.000     3M / 42M   INFO    General                 (sequence_mapper_notifier.h:  95)   Total 27932 reads processed
+  0:00:06.001     2M / 42M   INFO    General                 (mismatch_correction.cpp   : 395)   All edges processed
+  0:00:06.001     2M / 42M   INFO    General                 (mismatch_correction.cpp   : 450)   Corrected 0 nucleotides
+  0:00:06.001     2M / 42M   INFO   StageManager             (stage.cpp                 : 185)   STAGE == Contig Output (id: contig_output)
+  0:00:06.002     2M / 42M   INFO    General                 (contig_output.hpp         :  16)   Outputting contigs to /var/lib/condor/execute/slot1/dir_44824/rh2939.Mamu_MiSeq-IPD_17.06.01_2.2.0.0_plus_SP.fasta/K127/before_rr.fasta
+  0:00:06.003     2M / 42M   INFO    General                 (contig_output_stage.cpp   : 151)   Writing GFA graph to /var/lib/condor/execute/slot1/dir_44824/rh2939.Mamu_MiSeq-IPD_17.06.01_2.2.0.0_plus_SP.fasta/K127/assembly_graph_after_simplification.gfa
+  0:00:06.004     2M / 42M   INFO   StageManager             (stage.cpp                 : 185)   STAGE == Paired Information Counting (id: late_pair_info_count)
+  0:00:06.004     3M / 42M   INFO    General                 (graph_pack.cpp            :  77)   Normalizing k-mer map. Total 768 kmers to process
+  0:00:06.005     3M / 42M   INFO    General                 (graph_pack.cpp            :  79)   Normalizing done
+  0:00:06.005     3M / 42M   INFO    General                 (pair_info_count.cpp       : 339)   Min edge length for estimation: 466
+  0:00:06.005     3M / 42M   INFO    General                 (pair_info_count.cpp       : 350)   Estimating insert size for library #0
+  0:00:06.005     3M / 42M   INFO    General                 (pair_info_count.cpp       : 202)   Estimating insert size (takes a while)
+  0:00:06.024    35M / 75M   INFO    General                 (pair_info_count.cpp       :  48)   Selecting usual mapper
+  0:00:06.197    35M / 75M   INFO    General                 (sequence_mapper_notifier.h:  95)   Total 6983 reads processed
+  0:00:06.332    35M / 75M   INFO    General                 (pair_info_count.cpp       : 220)   Edge pairs: 142
+  0:00:06.333    35M / 75M   INFO    General                 (pair_info_count.cpp       : 222)   2200 paired reads (31.5051% of all) aligned to long edges
+  0:00:06.334     3M / 75M   INFO    General                 (pair_info_count.cpp       : 369)     Insert size = 304.699, deviation = 88.1512, left quantile = 202, right quantile = 425, read length = 151
+  0:00:06.335     3M / 75M   INFO    General                 (pair_info_count.cpp       : 390)   Filtering data for library #0
+  0:00:06.335     3M / 75M   INFO    General                 (pair_info_count.cpp       :  48)   Selecting usual mapper
+  0:00:06.431     3M / 75M   INFO    General                 (sequence_mapper_notifier.h:  95)   Total 6983 reads processed
+  0:00:06.432     3M / 75M   INFO    General                 (pair_info_count.cpp       : 402)   Mapping library #0
+  0:00:06.432     3M / 75M   INFO    General                 (pair_info_count.cpp       : 404)   Mapping paired reads (takes a while)
+  0:00:06.432     3M / 75M   INFO    General                 (pair_info_count.cpp       : 299)   Left insert size quantile 202, right insert size quantile 425, filtering threshold 2, rounding threshold 0
+  0:00:06.446    12M / 75M   INFO    General                 (pair_info_count.cpp       :  48)   Selecting usual mapper
+  0:00:06.554    12M / 75M   INFO    General                 (sequence_mapper_notifier.h:  95)   Total 6983 reads processed
+  0:00:06.574     3M / 75M   INFO   StageManager             (stage.cpp                 : 185)   STAGE == Distance Estimation (id: distance_estimation)
+  0:00:06.574     3M / 75M   INFO    General                 (distance_estimation.cpp   : 179)   Processing library #0
+  0:00:06.575     3M / 75M   INFO    General                 (distance_estimation.cpp   : 150)   Weight Filter Done
+  0:00:06.575     3M / 75M   INFO   DistanceEstimator        (distance_estimation.hpp   : 116)   Using SIMPLE distance estimator
+  0:00:06.576     3M / 75M   INFO    General                 (distance_estimation.cpp   :  37)   Filtering info
+  0:00:06.576     3M / 75M   INFO    General                 (pair_info_filters.hpp     : 242)   Start filtering; library index size: 136
+  0:00:06.577     3M / 75M   INFO    General                 (pair_info_filters.hpp     : 263)   Done filtering; library index size: 112
+  0:00:06.577     3M / 75M   INFO    General                 (distance_estimation.cpp   : 156)   Refining clustered pair information
+  0:00:06.577     3M / 75M   INFO    General                 (distance_estimation.cpp   : 158)   The refining of clustered pair information has been finished
+  0:00:06.577     3M / 75M   INFO    General                 (distance_estimation.cpp   : 160)   Improving paired information
+  0:00:06.578     3M / 75M   INFO   PairInfoImprover         (pair_info_improver.hpp    : 104)   Paired info stats: missing = 1; contradictional = 0
+  0:00:06.579     3M / 75M   INFO   PairInfoImprover         (pair_info_improver.hpp    : 104)   Paired info stats: missing = 0; contradictional = 0
+  0:00:06.579     3M / 75M   INFO    General                 (distance_estimation.cpp   : 104)   Filling scaffolding index
+  0:00:06.579     3M / 75M   INFO   DistanceEstimator        (distance_estimation.hpp   : 116)   Using SMOOTHING distance estimator
+  0:00:06.583     3M / 75M   INFO    General                 (distance_estimation.cpp   :  37)   Filtering info
+  0:00:06.583     3M / 75M   INFO    General                 (pair_info_filters.hpp     : 242)   Start filtering; library index size: 108
+  0:00:06.583     3M / 75M   INFO    General                 (pair_info_filters.hpp     : 263)   Done filtering; library index size: 108
+  0:00:06.584     3M / 75M   INFO    General                 (distance_estimation.cpp   : 186)   Clearing raw paired index
+  0:00:06.584     3M / 75M   INFO   StageManager             (stage.cpp                 : 185)   STAGE == Repeat Resolving (id: repeat_resolving)
+  0:00:06.584     3M / 75M   INFO    General                 (repeat_resolving.cpp      :  87)   Using Path-Extend repeat resolving
+  0:00:06.584     3M / 75M   INFO    General                 (launcher.cpp              : 600)   ExSPAnder repeat resolving tool started
+  0:00:06.585     3M / 76M   INFO    General                 (launcher.cpp              : 418)   Creating main extenders, unique edge length = 2000
+  0:00:06.585     3M / 76M   INFO    General                 (extenders_logic.cpp       : 334)   Estimated coverage of library #0 is 11.8768
+  0:00:06.585     3M / 76M   INFO    General                 (extenders_logic.cpp       : 345)   Creating extender; library index size: 114
+  0:00:06.585     3M / 76M   INFO    General                 (extenders_logic.cpp       : 334)   Estimated coverage of library #0 is 11.8768
+  0:00:06.585     3M / 76M   INFO    General                 (extenders_logic.cpp       : 345)   Creating extender; library index size: 114
+  0:00:06.585     3M / 76M   INFO    General                 (extenders_logic.cpp       : 543)   Using 1 paired-end library
+  0:00:06.585     3M / 76M   INFO    General                 (extenders_logic.cpp       : 544)   Using 1 paired-end scaffolding library
+  0:00:06.585     3M / 76M   INFO    General                 (extenders_logic.cpp       : 545)   Using 0 single read libraries
+  0:00:06.585     3M / 76M   INFO    General                 (launcher.cpp              : 447)   Total number of extenders is 3
+  0:00:06.585     3M / 76M   INFO    General                 (path_extenders.cpp        :  36)   Processed 0 paths from 50 (0%)
+  0:00:06.586     3M / 76M   INFO    General                 (path_extenders.cpp        :  36)   Processed 6 paths from 50 (12%)
+  0:00:06.586     3M / 76M   INFO    General                 (path_extenders.cpp        :  36)   Processed 12 paths from 50 (24%)
+  0:00:06.586     3M / 76M   INFO    General                 (path_extenders.cpp        :  36)   Processed 18 paths from 50 (36%)
+  0:00:06.587     3M / 76M   INFO    General                 (path_extenders.cpp        :  36)   Processed 24 paths from 50 (48%)
+  0:00:06.587     3M / 76M   INFO    General                 (path_extenders.cpp        :  36)   Processed 30 paths from 50 (60%)
+  0:00:06.587     3M / 76M   INFO    General                 (path_extenders.cpp        :  36)   Processed 36 paths from 50 (72%)
+  0:00:06.587     3M / 76M   INFO    General                 (path_extenders.cpp        :  36)   Processed 42 paths from 50 (84%)
+  0:00:06.588     3M / 76M   INFO    General                 (path_extenders.cpp        :  36)   Processed 48 paths from 50 (96%)
+  0:00:06.588     3M / 76M   INFO    General                 (launcher.cpp              : 250)   Finalizing paths
+  0:00:06.588     3M / 76M   INFO    General                 (launcher.cpp              : 252)   Deduplicating paths
+  0:00:06.588     3M / 76M   INFO    General                 (launcher.cpp              : 256)   Paths deduplicated
+  0:00:06.589     3M / 76M   INFO   PEResolver               (pe_resolver.cpp           :  60)   Removing overlaps
+  0:00:06.589     3M / 76M   INFO   PEResolver               (pe_resolver.cpp           :  63)   Sorting paths
+  0:00:06.589     3M / 76M   INFO   PEResolver               (pe_resolver.cpp           :  70)   Marking overlaps
+  0:00:06.589     3M / 76M   INFO   OverlapRemover           (overlap_remover.hpp       : 116)   Marking start/end overlaps
+  0:00:06.589     3M / 76M   INFO   OverlapRemover           (overlap_remover.hpp       : 119)   Marking remaining overlaps
+  0:00:06.590     3M / 76M   INFO   PEResolver               (pe_resolver.cpp           :  73)   Splitting paths
+  0:00:06.590     3M / 76M   INFO   PEResolver               (pe_resolver.cpp           :  78)   Deduplicating paths
+  0:00:06.590     3M / 76M   INFO   PEResolver               (pe_resolver.cpp           :  80)   Overlaps removed
+  0:00:06.590     3M / 76M   INFO    General                 (launcher.cpp              : 273)   Paths finalized
+  0:00:06.590     3M / 76M   INFO    General                 (launcher.cpp              : 454)   Closing gaps in paths
+  0:00:06.591     3M / 76M   INFO    General                 (launcher.cpp              : 484)   Gap closing completed
+  0:00:06.591     3M / 76M   INFO    General                 (launcher.cpp              : 302)   Traversing tandem repeats
+  0:00:06.592     3M / 76M   INFO    General                 (launcher.cpp              : 312)   Traversed 0 loops
+  0:00:06.592     3M / 76M   INFO    General                 (launcher.cpp              : 250)   Finalizing paths
+  0:00:06.592     3M / 76M   INFO    General                 (launcher.cpp              : 252)   Deduplicating paths
+  0:00:06.592     3M / 76M   INFO    General                 (launcher.cpp              : 256)   Paths deduplicated
+  0:00:06.592     3M / 76M   INFO   PEResolver               (pe_resolver.cpp           :  60)   Removing overlaps
+  0:00:06.593     3M / 76M   INFO   PEResolver               (pe_resolver.cpp           :  63)   Sorting paths
+  0:00:06.593     3M / 76M   INFO   PEResolver               (pe_resolver.cpp           :  70)   Marking overlaps
+  0:00:06.593     3M / 76M   INFO   OverlapRemover           (overlap_remover.hpp       : 116)   Marking start/end overlaps
+  0:00:06.593     3M / 76M   INFO   OverlapRemover           (overlap_remover.hpp       : 119)   Marking remaining overlaps
+  0:00:06.593     3M / 76M   INFO   PEResolver               (pe_resolver.cpp           :  73)   Splitting paths
+  0:00:06.593     3M / 76M   INFO   PEResolver               (pe_resolver.cpp           :  78)   Deduplicating paths
+  0:00:06.593     3M / 76M   INFO   PEResolver               (pe_resolver.cpp           :  80)   Overlaps removed
+  0:00:06.594     3M / 76M   INFO    General                 (launcher.cpp              : 273)   Paths finalized
+  0:00:06.594     3M / 76M   INFO    General                 (launcher.cpp              : 664)   ExSPAnder repeat resolving tool finished
+  0:00:06.594     3M / 76M   INFO   StageManager             (stage.cpp                 : 185)   STAGE == Contig Output (id: contig_output)
+  0:00:06.594     3M / 76M   INFO    General                 (contig_output.hpp         :  16)   Outputting contigs to /var/lib/condor/execute/slot1/dir_44824/rh2939.Mamu_MiSeq-IPD_17.06.01_2.2.0.0_plus_SP.fasta/K127/before_rr.fasta
+  0:00:06.596     3M / 76M   INFO    General                 (contig_output_stage.cpp   : 151)   Writing GFA graph to /var/lib/condor/execute/slot1/dir_44824/rh2939.Mamu_MiSeq-IPD_17.06.01_2.2.0.0_plus_SP.fasta/K127/assembly_graph_with_scaffolds.gfa
+  0:00:06.596     3M / 76M   INFO    General                 (contig_output_stage.cpp   : 165)   Outputting FastG graph to /var/lib/condor/execute/slot1/dir_44824/rh2939.Mamu_MiSeq-IPD_17.06.01_2.2.0.0_plus_SP.fasta/K127/assembly_graph.fastg
+  0:00:06.598     3M / 76M   INFO    General                 (contig_output_stage.cpp   : 196)   Breaking scaffolds
+  0:00:06.599     3M / 76M   INFO    General                 (contig_output_stage.cpp   :  98)   Outputting contigs to /var/lib/condor/execute/slot1/dir_44824/rh2939.Mamu_MiSeq-IPD_17.06.01_2.2.0.0_plus_SP.fasta/K127/final_contigs.fasta
+  0:00:06.599     3M / 76M   INFO    General                 (contig_output_stage.cpp   : 104)   Outputting FastG paths to /var/lib/condor/execute/slot1/dir_44824/rh2939.Mamu_MiSeq-IPD_17.06.01_2.2.0.0_plus_SP.fasta/K127/final_contigs.paths
+  0:00:06.600     3M / 76M   INFO    General                 (contig_output_stage.cpp   :  98)   Outputting contigs to /var/lib/condor/execute/slot1/dir_44824/rh2939.Mamu_MiSeq-IPD_17.06.01_2.2.0.0_plus_SP.fasta/K127/scaffolds.fasta
+  0:00:06.601     3M / 76M   INFO    General                 (contig_output_stage.cpp   : 104)   Outputting FastG paths to /var/lib/condor/execute/slot1/dir_44824/rh2939.Mamu_MiSeq-IPD_17.06.01_2.2.0.0_plus_SP.fasta/K127/scaffolds.paths
+  0:00:06.601     3M / 76M   INFO    General                 (contig_output_stage.cpp   : 111)   Populating GFA with scaffold paths
+  0:00:06.602     3M / 76M   INFO    General                 (pipeline.cpp              : 287)   SPAdes finished
+  0:00:06.603     1M / 76M   INFO    General                 (main.cpp                  : 136)   Assembling time: 0 hours 0 minutes 6 seconds
+
+===== K127 finished. 
+
+
+===== Copy files started. 
+
+
+== Running: /opt/conda/bin/python /opt/conda/share/spades/spades_pipeline/scripts/copy_files.py /var/lib/condor/execute/slot1/dir_44824/rh2939.Mamu_MiSeq-IPD_17.06.01_2.2.0.0_plus_SP.fasta/K127/before_rr.fasta /var/lib/condor/execute/slot1/dir_44824/rh2939.Mamu_MiSeq-IPD_17.06.01_2.2.0.0_plus_SP.fasta/before_rr.fasta /var/lib/condor/execute/slot1/dir_44824/rh2939.Mamu_MiSeq-IPD_17.06.01_2.2.0.0_plus_SP.fasta/K127/assembly_graph_after_simplification.gfa /var/lib/condor/execute/slot1/dir_44824/rh2939.Mamu_MiSeq-IPD_17.06.01_2.2.0.0_plus_SP.fasta/assembly_graph_after_simplification.gfa /var/lib/condor/execute/slot1/dir_44824/rh2939.Mamu_MiSeq-IPD_17.06.01_2.2.0.0_plus_SP.fasta/K127/final_contigs.fasta /var/lib/condor/execute/slot1/dir_44824/rh2939.Mamu_MiSeq-IPD_17.06.01_2.2.0.0_plus_SP.fasta/contigs.fasta /var/lib/condor/execute/slot1/dir_44824/rh2939.Mamu_MiSeq-IPD_17.06.01_2.2.0.0_plus_SP.fasta/K127/first_pe_contigs.fasta /var/lib/condor/execute/slot1/dir_44824/rh2939.Mamu_MiSeq-IPD_17.06.01_2.2.0.0_plus_SP.fasta/first_pe_contigs.fasta /var/lib/condor/execute/slot1/dir_44824/rh2939.Mamu_MiSeq-IPD_17.06.01_2.2.0.0_plus_SP.fasta/K127/strain_graph.gfa /var/lib/condor/execute/slot1/dir_44824/rh2939.Mamu_MiSeq-IPD_17.06.01_2.2.0.0_plus_SP.fasta/strain_graph.gfa /var/lib/condor/execute/slot1/dir_44824/rh2939.Mamu_MiSeq-IPD_17.06.01_2.2.0.0_plus_SP.fasta/K127/scaffolds.fasta /var/lib/condor/execute/slot1/dir_44824/rh2939.Mamu_MiSeq-IPD_17.06.01_2.2.0.0_plus_SP.fasta/scaffolds.fasta /var/lib/condor/execute/slot1/dir_44824/rh2939.Mamu_MiSeq-IPD_17.06.01_2.2.0.0_plus_SP.fasta/K127/scaffolds.paths /var/lib/condor/execute/slot1/dir_44824/rh2939.Mamu_MiSeq-IPD_17.06.01_2.2.0.0_plus_SP.fasta/scaffolds.paths /var/lib/condor/execute/slot1/dir_44824/rh2939.Mamu_MiSeq-IPD_17.06.01_2.2.0.0_plus_SP.fasta/K127/assembly_graph_with_scaffolds.gfa /var/lib/condor/execute/slot1/dir_44824/rh2939.Mamu_MiSeq-IPD_17.06.01_2.2.0.0_plus_SP.fasta/assembly_graph_with_scaffolds.gfa /var/lib/condor/execute/slot1/dir_44824/rh2939.Mamu_MiSeq-IPD_17.06.01_2.2.0.0_plus_SP.fasta/K127/assembly_graph.fastg /var/lib/condor/execute/slot1/dir_44824/rh2939.Mamu_MiSeq-IPD_17.06.01_2.2.0.0_plus_SP.fasta/assembly_graph.fastg /var/lib/condor/execute/slot1/dir_44824/rh2939.Mamu_MiSeq-IPD_17.06.01_2.2.0.0_plus_SP.fasta/K127/final_contigs.paths /var/lib/condor/execute/slot1/dir_44824/rh2939.Mamu_MiSeq-IPD_17.06.01_2.2.0.0_plus_SP.fasta/contigs.paths
+
+
+===== Copy files finished. 
+
+
+===== Assembling finished. 
+
+
+===== Breaking scaffolds started. 
+
+
+== Running: /opt/conda/bin/python /opt/conda/share/spades/spades_pipeline/scripts/breaking_scaffolds_script.py --result_scaffolds_filename /var/lib/condor/execute/slot1/dir_44824/rh2939.Mamu_MiSeq-IPD_17.06.01_2.2.0.0_plus_SP.fasta/scaffolds.fasta --misc_dir /var/lib/condor/execute/slot1/dir_44824/rh2939.Mamu_MiSeq-IPD_17.06.01_2.2.0.0_plus_SP.fasta/misc --threshold_for_breaking_scaffolds 3
+
+
+===== Breaking scaffolds finished. 
+
+
+===== Terminate started. 
+
+
+===== Terminate finished. 
+
+ * Assembled contigs are in /var/lib/condor/execute/slot1/dir_44824/rh2939.Mamu_MiSeq-IPD_17.06.01_2.2.0.0_plus_SP.fasta/contigs.fasta
+ * Assembled scaffolds are in /var/lib/condor/execute/slot1/dir_44824/rh2939.Mamu_MiSeq-IPD_17.06.01_2.2.0.0_plus_SP.fasta/scaffolds.fasta
+ * Paths in the assembly graph corresponding to the contigs are in /var/lib/condor/execute/slot1/dir_44824/rh2939.Mamu_MiSeq-IPD_17.06.01_2.2.0.0_plus_SP.fasta/contigs.paths
+ * Paths in the assembly graph corresponding to the scaffolds are in /var/lib/condor/execute/slot1/dir_44824/rh2939.Mamu_MiSeq-IPD_17.06.01_2.2.0.0_plus_SP.fasta/scaffolds.paths
+ * Assembly graph is in /var/lib/condor/execute/slot1/dir_44824/rh2939.Mamu_MiSeq-IPD_17.06.01_2.2.0.0_plus_SP.fasta/assembly_graph.fastg
+ * Assembly graph in GFA format is in /var/lib/condor/execute/slot1/dir_44824/rh2939.Mamu_MiSeq-IPD_17.06.01_2.2.0.0_plus_SP.fasta/assembly_graph_with_scaffolds.gfa
+
+======= SPAdes pipeline finished WITH WARNINGS!
+
+=== Error correction and assembling warnings:
+ * 0:00:05.086     2M / 42M   WARN    General                 (kmer_coverage_model.cpp   : 327)   Valley value was estimated improperly, reset to 3
+ * 0:00:05.087     2M / 42M   WARN    General                 (kmer_coverage_model.cpp   : 366)   Failed to determine erroneous kmer threshold. Threshold set to: 3
+======= Warnings saved to /var/lib/condor/execute/slot1/dir_44824/rh2939.Mamu_MiSeq-IPD_17.06.01_2.2.0.0_plus_SP.fasta/warnings.log
+
+SPAdes log can be found here: /var/lib/condor/execute/slot1/dir_44824/rh2939.Mamu_MiSeq-IPD_17.06.01_2.2.0.0_plus_SP.fasta/spades.log
+
+Thank you for using SPAdes!
+Create an APIWrapper

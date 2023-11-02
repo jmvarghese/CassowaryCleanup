@@ -1,0 +1,646 @@
+Building DAG of jobs...
+Using shell: /bin/bash
+Provided cores: 1 (use --cores to define parallelism)
+Rules claiming more threads will be scaled down.
+Job counts:
+	count	jobs
+	1	all
+	1	assemble_exact_fastq
+	1	assemble_novel_fastq
+	1	collect_novel_exon_2_sequences
+	1	combine_unused
+	1	filter_hq_exact_reads
+	1	filter_hq_novel_reads
+	1	genometyping
+	1	labkey_import
+	1	map_to_reference_hla
+	1	remove_genometyped_sequences
+	1	remove_near_identical
+	1	rename_exact
+	1	rename_novel
+	1	vsearch__exact_orient
+	1	vsearch__novel_orient
+	16
+Select jobs to execute...
+
+[Wed May 12 17:39:16 2021]
+rule map_to_reference_hla:
+    input: Mamu_MiSeq-IPD_17.06.01_2.2.0.0_plus_SP.fasta, 40415_R1_001.fastq.gz, 40415_R2_001.fastq.gz
+    output: AV58.Mamu_MiSeq-IPD_17.06.01_2.2.0.0_plus_SP.fasta.aln.R1.fastq.gz, AV58.Mamu_MiSeq-IPD_17.06.01_2.2.0.0_plus_SP.fasta.aln.R2.fastq.gz
+    jobid: 6
+
+[33mJob counts:
+	count	jobs
+	1	map_to_reference_hla
+	1[0m
+java -ea -Xmx3g -Xms3g -cp /opt/conda/opt/bbmap-38.90-1/current/ align2.BBMap build=1 overwrite=true fastareadlen=500 ref=Mamu_MiSeq-IPD_17.06.01_2.2.0.0_plus_SP.fasta in=40415_R1_001.fastq.gz in2=40415_R2_001.fastq.gz outm=AV58.Mamu_MiSeq-IPD_17.06.01_2.2.0.0_plus_SP.fasta.aln.R1.fastq.gz outm2=AV58.Mamu_MiSeq-IPD_17.06.01_2.2.0.0_plus_SP.fasta.aln.R2.fastq.gz semiperfectmode=t ambig=random -Xmx3g
+Executing align2.BBMap [build=1, overwrite=true, fastareadlen=500, ref=Mamu_MiSeq-IPD_17.06.01_2.2.0.0_plus_SP.fasta, in=40415_R1_001.fastq.gz, in2=40415_R2_001.fastq.gz, outm=AV58.Mamu_MiSeq-IPD_17.06.01_2.2.0.0_plus_SP.fasta.aln.R1.fastq.gz, outm2=AV58.Mamu_MiSeq-IPD_17.06.01_2.2.0.0_plus_SP.fasta.aln.R2.fastq.gz, semiperfectmode=t, ambig=random, -Xmx3g]
+Version 38.90
+
+Choosing a site randomly for ambiguous mappings.
+Writing reference.
+Executing dna.FastaToChromArrays2 [Mamu_MiSeq-IPD_17.06.01_2.2.0.0_plus_SP.fasta, 1, writeinthread=false, genscaffoldinfo=true, retain, waitforwriting=false, gz=true, maxlen=536670912, writechroms=true, minscaf=1, midpad=300, startpad=8000, stoppad=8000, nodisk=false]
+
+Set genScaffoldInfo=true
+Writing chunk 1
+Set genome to 1
+
+Loaded Reference:	0.026 seconds.
+Loading index for chunk 1-1, build 1
+No index available; generating from reference genome: /var/lib/condor/execute/slot1/dir_31166/ref/index/1/chr1_index_k13_c11_b1.block
+Indexing threads started for block 0-1
+Indexing threads finished for block 0-1
+Generated Index:	1.917 seconds.
+Analyzed Index:   	4.931 seconds.
+Started output stream:	0.010 seconds.
+Cleared Memory:    	0.341 seconds.
+Processing reads in paired-ended mode.
+Started read stream.
+Started 1 mapping thread.
+Detecting finished threads: 0
+
+   ------------------   Results   ------------------   
+
+Genome:                	1
+Key Length:            	13
+Max Indel:             	0
+Minimum Score Ratio:  	0.45
+Mapping Mode:         	semiperfect
+Reads Used:           	76636820	(11572159820 bases)
+
+Mapping:          	493.552 seconds.
+Reads/sec:       	155276.08
+kBases/sec:      	23446.69
+
+
+Pairing data:   	pct pairs	num pairs 	pct bases	   num bases
+
+mated pairs:     	  0.0103% 	     3936 	  0.0103% 	     1188672
+bad pairs:       	  0.0000% 	        3 	  0.0000% 	         906
+insert size avg: 	  214.29
+
+
+Read 1 data:      	pct reads	num reads 	pct bases	   num bases
+
+mapped:          	  0.0342% 	    13108 	  0.0342% 	     1979308
+unambiguous:     	  0.0199% 	     7623 	  0.0199% 	     1151073
+ambiguous:       	  0.0143% 	     5485 	  0.0143% 	      828235
+low-Q discards:  	  0.0843% 	    32315 	  0.0843% 	     4879565
+
+perfect best site:	  0.0025% 	      974 	  0.0025% 	      147074
+semiperfect site:	  0.0342% 	    13108 	  0.0342% 	     1979308
+rescued:         	  0.0000% 	        0
+
+Match Rate:      	      NA 	       NA 	 76.1328% 	     1506902
+Error Rate:      	  0.0000% 	        0 	  0.0000% 	           0
+Sub Rate:        	  0.0000% 	        0 	  0.0000% 	           0
+Del Rate:        	  0.0000% 	        0 	  0.0000% 	           0
+Ins Rate:        	  0.0000% 	        0 	  0.0000% 	           0
+N Rate:          	 92.5694% 	    12134 	 23.8672% 	      472406
+
+
+Read 2 data:      	pct reads	num reads 	pct bases	   num bases
+
+mapped:          	  0.0332% 	    12733 	  0.0332% 	     1922683
+unambiguous:     	  0.0195% 	     7475 	  0.0195% 	     1128725
+ambiguous:       	  0.0137% 	     5258 	  0.0137% 	      793958
+low-Q discards:  	  0.0107% 	     4103 	  0.0107% 	      619553
+
+perfect best site:	  0.0028% 	     1066 	  0.0028% 	      160966
+semiperfect site:	  0.0332% 	    12733 	  0.0332% 	     1922683
+rescued:         	  0.0000% 	        0
+
+Match Rate:      	      NA 	       NA 	 76.2046% 	     1465172
+Error Rate:      	  0.0000% 	        0 	  0.0000% 	           0
+Sub Rate:        	  0.0000% 	        0 	  0.0000% 	           0
+Del Rate:        	  0.0000% 	        0 	  0.0000% 	           0
+Ins Rate:        	  0.0000% 	        0 	  0.0000% 	           0
+N Rate:          	 91.6281% 	    11667 	 23.7954% 	      457511
+
+Total time:     	501.061 seconds.
+[Wed May 12 17:47:39 2021]
+Finished job 6.
+1 of 16 steps (6%) done
+Select jobs to execute...
+
+[Wed May 12 17:47:39 2021]
+rule filter_hq_exact_reads:
+    input: AV58.Mamu_MiSeq-IPD_17.06.01_2.2.0.0_plus_SP.fasta.aln.R1.fastq.gz, AV58.Mamu_MiSeq-IPD_17.06.01_2.2.0.0_plus_SP.fasta.aln.R2.fastq.gz
+    output: AV58.Mamu_MiSeq-IPD_17.06.01_2.2.0.0_plus_SP.fasta.hq.R1.fastq, AV58.Mamu_MiSeq-IPD_17.06.01_2.2.0.0_plus_SP.fasta.hq.R2.fastq
+    jobid: 5
+
+[33mJob counts:
+	count	jobs
+	1	filter_hq_exact_reads
+	1[0m
+vsearch v2.17.0_linux_x86_64, 1007.5GB RAM, 80 cores
+https://github.com/torognes/vsearch
+
+Reading input file 100%
+19612 sequences kept (of which 0 truncated), 2290 sequences discarded.
+Removing temporary output file AV58.Mamu_MiSeq-IPD_17.06.01_2.2.0.0_plus_SP.fasta.aln.R1.fastq.gz.
+Removing temporary output file AV58.Mamu_MiSeq-IPD_17.06.01_2.2.0.0_plus_SP.fasta.aln.R2.fastq.gz.
+[Wed May 12 17:47:42 2021]
+Finished job 5.
+2 of 16 steps (12%) done
+Select jobs to execute...
+
+[Wed May 12 17:47:42 2021]
+rule assemble_exact_fastq:
+    input: AV58.Mamu_MiSeq-IPD_17.06.01_2.2.0.0_plus_SP.fasta.hq.R1.fastq, AV58.Mamu_MiSeq-IPD_17.06.01_2.2.0.0_plus_SP.fasta.hq.R2.fastq
+    output: AV58.Mamu_MiSeq-IPD_17.06.01_2.2.0.0_plus_SP.fasta.spades.fasta
+    jobid: 4
+
+[33mJob counts:
+	count	jobs
+	1	assemble_exact_fastq
+	1[0m
+Removing temporary output file AV58.Mamu_MiSeq-IPD_17.06.01_2.2.0.0_plus_SP.fasta.hq.R2.fastq.
+Removing temporary output file AV58.Mamu_MiSeq-IPD_17.06.01_2.2.0.0_plus_SP.fasta.hq.R1.fastq.
+[Wed May 12 17:47:53 2021]
+Finished job 4.
+3 of 16 steps (19%) done
+Select jobs to execute...
+
+[Wed May 12 17:47:53 2021]
+rule vsearch__exact_orient:
+    input: Mamu_MiSeq-IPD_17.06.01_2.2.0.0_plus_SP.fasta, AV58.Mamu_MiSeq-IPD_17.06.01_2.2.0.0_plus_SP.fasta.spades.fasta
+    output: AV58.Mamu_MiSeq-IPD_17.06.01_2.2.0.0_plus_SP.fasta.exact.oriented.fasta
+    jobid: 3
+
+[33mJob counts:
+	count	jobs
+	1	vsearch__exact_orient
+	1[0m
+vsearch v2.17.0_linux_x86_64, 1007.5GB RAM, 80 cores
+https://github.com/torognes/vsearch
+
+Reading file Mamu_MiSeq-IPD_17.06.01_2.2.0.0_plus_SP.fasta 100%
+253962 nt in 1455 seqs, min 125, max 247, avg 175
+Masking 100%
+Counting k-mers 100%
+Creating k-mer index 100%
+Orienting sequences 100%
+Forward oriented sequences: 33 (31.73%)
+Reverse oriented sequences: 60 (57.69%)
+All oriented sequences:     93 (89.42%)
+Not oriented sequences:     11 (10.58%)
+Total number of sequences:  104
+[Wed May 12 17:47:56 2021]
+Finished job 3.
+4 of 16 steps (25%) done
+Select jobs to execute...
+
+[Wed May 12 17:47:56 2021]
+rule rename_exact:
+    input: AV58.Mamu_MiSeq-IPD_17.06.01_2.2.0.0_plus_SP.fasta.exact.oriented.fasta
+    output: AV58.Mamu_MiSeq-IPD_17.06.01_2.2.0.0_plus_SP.fasta.exact.fasta
+    jobid: 2
+
+[33mJob counts:
+	count	jobs
+	1	rename_exact
+	1[0m
+java -ea -Xmx3g -cp /opt/conda/opt/bbmap-38.90-1/current/ jgi.RenameReads in=AV58.Mamu_MiSeq-IPD_17.06.01_2.2.0.0_plus_SP.fasta.exact.oriented.fasta out=AV58.Mamu_MiSeq-IPD_17.06.01_2.2.0.0_plus_SP.fasta.exact.fasta addprefix=t -Xmx3g prefix=AV58
+Executing jgi.RenameReads [in=AV58.Mamu_MiSeq-IPD_17.06.01_2.2.0.0_plus_SP.fasta.exact.oriented.fasta, out=AV58.Mamu_MiSeq-IPD_17.06.01_2.2.0.0_plus_SP.fasta.exact.fasta, addprefix=t, -Xmx3g, prefix=AV58]
+
+Time: 0.100 seconds.
+Removing temporary output file AV58.Mamu_MiSeq-IPD_17.06.01_2.2.0.0_plus_SP.fasta.exact.oriented.fasta.
+[Wed May 12 17:47:58 2021]
+Finished job 2.
+5 of 16 steps (31%) done
+Select jobs to execute...
+
+[Wed May 12 17:47:58 2021]
+rule remove_genometyped_sequences:
+    input: AV58.Mamu_MiSeq-IPD_17.06.01_2.2.0.0_plus_SP.fasta.exact.fasta, 40415_R1_001.fastq.gz, 40415_R2_001.fastq.gz
+    output: AV58.Mamu_MiSeq-IPD_17.06.01_2.2.0.0_plus_SP.fasta.unmapped.R1.fastq.gz, AV58.Mamu_MiSeq-IPD_17.06.01_2.2.0.0_plus_SP.fasta.unmapped.R2.fastq.gz
+    jobid: 14
+
+[33mJob counts:
+	count	jobs
+	1	remove_genometyped_sequences
+	1[0m
+java -ea -Xmx3g -Xms3g -cp /opt/conda/opt/bbmap-38.90-1/current/ align2.BBMap build=1 overwrite=true fastareadlen=500 ref=AV58.Mamu_MiSeq-IPD_17.06.01_2.2.0.0_plus_SP.fasta.exact.fasta in=40415_R1_001.fastq.gz in2=40415_R2_001.fastq.gz outu=AV58.Mamu_MiSeq-IPD_17.06.01_2.2.0.0_plus_SP.fasta.unmapped.R1.fastq.gz outu2=AV58.Mamu_MiSeq-IPD_17.06.01_2.2.0.0_plus_SP.fasta.unmapped.R2.fastq.gz semiperfectmode=t ambig=random -Xmx3g
+Executing align2.BBMap [build=1, overwrite=true, fastareadlen=500, ref=AV58.Mamu_MiSeq-IPD_17.06.01_2.2.0.0_plus_SP.fasta.exact.fasta, in=40415_R1_001.fastq.gz, in2=40415_R2_001.fastq.gz, outu=AV58.Mamu_MiSeq-IPD_17.06.01_2.2.0.0_plus_SP.fasta.unmapped.R1.fastq.gz, outu2=AV58.Mamu_MiSeq-IPD_17.06.01_2.2.0.0_plus_SP.fasta.unmapped.R2.fastq.gz, semiperfectmode=t, ambig=random, -Xmx3g]
+Version 38.90
+
+Choosing a site randomly for ambiguous mappings.
+NOTE:	Deleting contents of ref/genome/1 because reference is specified and overwrite=true
+NOTE:	Deleting contents of ref/index/1 because reference is specified and overwrite=true
+Writing reference.
+Executing dna.FastaToChromArrays2 [AV58.Mamu_MiSeq-IPD_17.06.01_2.2.0.0_plus_SP.fasta.exact.fasta, 1, writeinthread=false, genscaffoldinfo=true, retain, waitforwriting=false, gz=true, maxlen=536670912, writechroms=true, minscaf=1, midpad=300, startpad=8000, stoppad=8000, nodisk=false]
+
+Set genScaffoldInfo=true
+Writing chunk 1
+Set genome to 1
+
+Loaded Reference:	0.011 seconds.
+Loading index for chunk 1-1, build 1
+No index available; generating from reference genome: /var/lib/condor/execute/slot1/dir_31166/ref/index/1/chr1_index_k13_c14_b1.block
+Indexing threads started for block 0-1
+Indexing threads finished for block 0-1
+Generated Index:	2.103 seconds.
+Analyzed Index:   	5.441 seconds.
+Started output stream:	0.018 seconds.
+Cleared Memory:    	0.435 seconds.
+Processing reads in paired-ended mode.
+Started read stream.
+Started 1 mapping thread.
+Detecting finished threads: 0
+
+   ------------------   Results   ------------------   
+
+Genome:                	1
+Key Length:            	13
+Max Indel:             	0
+Minimum Score Ratio:  	0.45
+Mapping Mode:         	semiperfect
+Reads Used:           	76636820	(11572159820 bases)
+
+Mapping:          	551.332 seconds.
+Reads/sec:       	139003.15
+kBases/sec:      	20989.48
+
+
+Pairing data:   	pct pairs	num pairs 	pct bases	   num bases
+
+mated pairs:     	  0.0928% 	    35549 	  0.0928% 	    10735798
+bad pairs:       	  0.0043% 	     1661 	  0.0043% 	      501622
+insert size avg: 	  464.32
+
+
+Read 1 data:      	pct reads	num reads 	pct bases	   num bases
+
+mapped:          	  0.1586% 	    60792 	  0.1586% 	     9179592
+unambiguous:     	  0.1585% 	    60748 	  0.1585% 	     9172948
+ambiguous:       	  0.0001% 	       44 	  0.0001% 	        6644
+low-Q discards:  	  0.0843% 	    32315 	  0.0843% 	     4879565
+
+perfect best site:	  0.1358% 	    52048 	  0.1358% 	     7859248
+semiperfect site:	  0.1586% 	    60792 	  0.1586% 	     9179592
+rescued:         	  0.0000% 	        0
+
+Match Rate:      	      NA 	       NA 	 96.9686% 	     8901319
+Error Rate:      	  0.0000% 	        0 	  0.0000% 	           0
+Sub Rate:        	  0.0000% 	        0 	  0.0000% 	           0
+Del Rate:        	  0.0000% 	        0 	  0.0000% 	           0
+Ins Rate:        	  0.0000% 	        0 	  0.0000% 	           0
+N Rate:          	 14.3835% 	     8744 	  3.0314% 	      278273
+
+
+Read 2 data:      	pct reads	num reads 	pct bases	   num bases
+
+mapped:          	  0.1528% 	    58556 	  0.1528% 	     8841956
+unambiguous:     	  0.1527% 	    58510 	  0.1527% 	     8835010
+ambiguous:       	  0.0001% 	       46 	  0.0001% 	        6946
+low-Q discards:  	  0.0107% 	     4103 	  0.0107% 	      619553
+
+perfect best site:	  0.1306% 	    50030 	  0.1306% 	     7554530
+semiperfect site:	  0.1528% 	    58556 	  0.1528% 	     8841956
+rescued:         	  0.0000% 	        0
+
+Match Rate:      	      NA 	       NA 	 96.9450% 	     8571834
+Error Rate:      	  0.0000% 	        0 	  0.0000% 	           0
+Sub Rate:        	  0.0000% 	        0 	  0.0000% 	           0
+Del Rate:        	  0.0000% 	        0 	  0.0000% 	           0
+Ins Rate:        	  0.0000% 	        0 	  0.0000% 	           0
+N Rate:          	 14.5604% 	     8526 	  3.0550% 	      270122
+
+Total time:     	560.061 seconds.
+[Wed May 12 17:57:21 2021]
+Finished job 14.
+6 of 16 steps (38%) done
+Select jobs to execute...
+
+[Wed May 12 17:57:21 2021]
+rule collect_novel_exon_2_sequences:
+    input: Mamu_MiSeq-IPD_17.06.01_2.2.0.0_plus_SP.fasta, AV58.Mamu_MiSeq-IPD_17.06.01_2.2.0.0_plus_SP.fasta.unmapped.R1.fastq.gz, AV58.Mamu_MiSeq-IPD_17.06.01_2.2.0.0_plus_SP.fasta.unmapped.R2.fastq.gz
+    output: AV58.Mamu_MiSeq-IPD_17.06.01_2.2.0.0_plus_SP.fasta.novel.aln.R1.fastq.gz, AV58.Mamu_MiSeq-IPD_17.06.01_2.2.0.0_plus_SP.fasta.novel.aln.R2.fastq.gz
+    jobid: 13
+
+[33mJob counts:
+	count	jobs
+	1	collect_novel_exon_2_sequences
+	1[0m
+java -ea -Xmx3g -Xms3g -cp /opt/conda/opt/bbmap-38.90-1/current/ align2.BBMap build=1 overwrite=true fastareadlen=500 ref=Mamu_MiSeq-IPD_17.06.01_2.2.0.0_plus_SP.fasta in=AV58.Mamu_MiSeq-IPD_17.06.01_2.2.0.0_plus_SP.fasta.unmapped.R1.fastq.gz in2=AV58.Mamu_MiSeq-IPD_17.06.01_2.2.0.0_plus_SP.fasta.unmapped.R2.fastq.gz outm=AV58.Mamu_MiSeq-IPD_17.06.01_2.2.0.0_plus_SP.fasta.novel.aln.R1.fastq.gz outm2=AV58.Mamu_MiSeq-IPD_17.06.01_2.2.0.0_plus_SP.fasta.novel.aln.R2.fastq.gz ambig=random -Xmx3g
+Executing align2.BBMap [build=1, overwrite=true, fastareadlen=500, ref=Mamu_MiSeq-IPD_17.06.01_2.2.0.0_plus_SP.fasta, in=AV58.Mamu_MiSeq-IPD_17.06.01_2.2.0.0_plus_SP.fasta.unmapped.R1.fastq.gz, in2=AV58.Mamu_MiSeq-IPD_17.06.01_2.2.0.0_plus_SP.fasta.unmapped.R2.fastq.gz, outm=AV58.Mamu_MiSeq-IPD_17.06.01_2.2.0.0_plus_SP.fasta.novel.aln.R1.fastq.gz, outm2=AV58.Mamu_MiSeq-IPD_17.06.01_2.2.0.0_plus_SP.fasta.novel.aln.R2.fastq.gz, ambig=random, -Xmx3g]
+Version 38.90
+
+Choosing a site randomly for ambiguous mappings.
+NOTE:	Deleting contents of ref/genome/1 because reference is specified and overwrite=true
+NOTE:	Deleting contents of ref/index/1 because reference is specified and overwrite=true
+Writing reference.
+Executing dna.FastaToChromArrays2 [Mamu_MiSeq-IPD_17.06.01_2.2.0.0_plus_SP.fasta, 1, writeinthread=false, genscaffoldinfo=true, retain, waitforwriting=false, gz=true, maxlen=536670912, writechroms=true, minscaf=1, midpad=300, startpad=8000, stoppad=8000, nodisk=false]
+
+Set genScaffoldInfo=true
+Writing chunk 1
+Set genome to 1
+
+Loaded Reference:	0.032 seconds.
+Loading index for chunk 1-1, build 1
+No index available; generating from reference genome: /var/lib/condor/execute/slot1/dir_31166/ref/index/1/chr1_index_k13_c11_b1.block
+Indexing threads started for block 0-1
+Indexing threads finished for block 0-1
+Generated Index:	3.005 seconds.
+Analyzed Index:   	9.287 seconds.
+Started output stream:	0.038 seconds.
+Cleared Memory:    	0.734 seconds.
+Processing reads in paired-ended mode.
+Started read stream.
+Started 1 mapping thread.
+Detecting finished threads: 0
+
+   ------------------   Results   ------------------   
+
+Genome:                	1
+Key Length:            	13
+Max Indel:             	16000
+Minimum Score Ratio:  	0.56
+Mapping Mode:         	normal
+Reads Used:           	76472544	(11547354144 bases)
+
+Mapping:          	2677.030 seconds.
+Reads/sec:       	28566.19
+kBases/sec:      	4313.49
+
+
+Pairing data:   	pct pairs	num pairs 	pct bases	   num bases
+
+mated pairs:     	  0.0040% 	     1547 	  0.0040% 	      467194
+bad pairs:       	  0.0004% 	      158 	  0.0004% 	       47716
+insert size avg: 	  809.59
+
+
+Read 1 data:      	pct reads	num reads 	pct bases	   num bases
+
+mapped:          	  0.0082% 	     3152 	  0.0082% 	      475952
+unambiguous:     	  0.0028% 	     1071 	  0.0028% 	      161721
+ambiguous:       	  0.0054% 	     2081 	  0.0054% 	      314231
+low-Q discards:  	  0.0000% 	        0 	  0.0000% 	           0
+
+perfect best site:	  0.0000% 	        8 	  0.0000% 	        1208
+semiperfect site:	  0.0023% 	      897 	  0.0023% 	      135447
+rescued:         	  0.0004% 	      141
+
+Match Rate:      	      NA 	       NA 	 65.4178% 	      355810
+Error Rate:      	 69.3528% 	     2186 	 14.3091% 	       77828
+Sub Rate:        	 68.9404% 	     2173 	  1.5538% 	        8451
+Del Rate:        	  5.2982% 	      167 	 12.4934% 	       67952
+Ins Rate:        	  8.6294% 	      272 	  0.2620% 	        1425
+N Rate:          	 92.3541% 	     2911 	 20.2731% 	      110266
+
+
+Read 2 data:      	pct reads	num reads 	pct bases	   num bases
+
+mapped:          	  0.0085% 	     3260 	  0.0085% 	      492260
+unambiguous:     	  0.0028% 	     1073 	  0.0028% 	      162023
+ambiguous:       	  0.0057% 	     2187 	  0.0057% 	      330237
+low-Q discards:  	  0.0000% 	        1 	  0.0000% 	         151
+
+perfect best site:	  0.0000% 	       10 	  0.0000% 	        1510
+semiperfect site:	  0.0023% 	      877 	  0.0023% 	      132427
+rescued:         	  0.0006% 	      221
+
+Match Rate:      	      NA 	       NA 	 68.8678% 	      370480
+Error Rate:      	 71.4724% 	     2330 	 10.3995% 	       55945
+Sub Rate:        	 71.1043% 	     2318 	  1.7050% 	        9172
+Del Rate:        	  5.1840% 	      169 	  8.4947% 	       45698
+Ins Rate:        	  7.6994% 	      251 	  0.1998% 	        1075
+N Rate:          	 91.6564% 	     2988 	 20.7327% 	      111533
+
+Total time:     	2690.543 seconds.
+Removing temporary output file AV58.Mamu_MiSeq-IPD_17.06.01_2.2.0.0_plus_SP.fasta.unmapped.R2.fastq.gz.
+Removing temporary output file AV58.Mamu_MiSeq-IPD_17.06.01_2.2.0.0_plus_SP.fasta.unmapped.R1.fastq.gz.
+[Wed May 12 18:42:15 2021]
+Finished job 13.
+7 of 16 steps (44%) done
+Select jobs to execute...
+
+[Wed May 12 18:42:15 2021]
+rule filter_hq_novel_reads:
+    input: AV58.Mamu_MiSeq-IPD_17.06.01_2.2.0.0_plus_SP.fasta.novel.aln.R1.fastq.gz, AV58.Mamu_MiSeq-IPD_17.06.01_2.2.0.0_plus_SP.fasta.novel.aln.R2.fastq.gz
+    output: AV58.Mamu_MiSeq-IPD_17.06.01_2.2.0.0_plus_SP.fasta.novel.hq.R1.fastq, AV58.Mamu_MiSeq-IPD_17.06.01_2.2.0.0_plus_SP.fasta.novel.hq.R2.fastq
+    jobid: 12
+
+[33mJob counts:
+	count	jobs
+	1	filter_hq_novel_reads
+	1[0m
+vsearch v2.17.0_linux_x86_64, 1007.5GB RAM, 80 cores
+https://github.com/torognes/vsearch
+
+Reading input file 100%
+3186 sequences kept (of which 0 truncated), 1521 sequences discarded.
+Removing temporary output file AV58.Mamu_MiSeq-IPD_17.06.01_2.2.0.0_plus_SP.fasta.novel.aln.R1.fastq.gz.
+Removing temporary output file AV58.Mamu_MiSeq-IPD_17.06.01_2.2.0.0_plus_SP.fasta.novel.aln.R2.fastq.gz.
+[Wed May 12 18:42:18 2021]
+Finished job 12.
+8 of 16 steps (50%) done
+Select jobs to execute...
+
+[Wed May 12 18:42:18 2021]
+rule assemble_novel_fastq:
+    input: AV58.Mamu_MiSeq-IPD_17.06.01_2.2.0.0_plus_SP.fasta.novel.hq.R1.fastq, AV58.Mamu_MiSeq-IPD_17.06.01_2.2.0.0_plus_SP.fasta.novel.hq.R2.fastq
+    output: AV58.Mamu_MiSeq-IPD_17.06.01_2.2.0.0_plus_SP.fasta.novel.spades.fasta
+    jobid: 11
+
+[33mJob counts:
+	count	jobs
+	1	assemble_novel_fastq
+	1[0m
+Removing temporary output file AV58.Mamu_MiSeq-IPD_17.06.01_2.2.0.0_plus_SP.fasta.novel.hq.R2.fastq.
+Removing temporary output file AV58.Mamu_MiSeq-IPD_17.06.01_2.2.0.0_plus_SP.fasta.novel.hq.R1.fastq.
+[Wed May 12 18:42:24 2021]
+Finished job 11.
+9 of 16 steps (56%) done
+Select jobs to execute...
+
+[Wed May 12 18:42:24 2021]
+rule genometyping:
+    input: AV58.Mamu_MiSeq-IPD_17.06.01_2.2.0.0_plus_SP.fasta.exact.fasta, Mamu_MiSeq-IPD_17.06.01_2.2.0.0_plus_SP.fasta
+    output: AV58.Mamu_MiSeq-IPD_17.06.01_2.2.0.0_plus_SP.fasta.genotypes.csv, AV58.Mamu_MiSeq-IPD_17.06.01_2.2.0.0_plus_SP.fasta.unused_exact.fasta, AV58.Mamu_MiSeq-IPD_17.06.01_2.2.0.0_plus_SP.fasta.used_exact.fasta
+    jobid: 1
+
+[33mJob counts:
+	count	jobs
+	1	genometyping
+	1[0m
+Removing temporary output file AV58.Mamu_MiSeq-IPD_17.06.01_2.2.0.0_plus_SP.fasta.exact.fasta.
+[Wed May 12 18:42:27 2021]
+Finished job 1.
+10 of 16 steps (62%) done
+Select jobs to execute...
+
+[Wed May 12 18:42:27 2021]
+rule vsearch__novel_orient:
+    input: Mamu_MiSeq-IPD_17.06.01_2.2.0.0_plus_SP.fasta, AV58.Mamu_MiSeq-IPD_17.06.01_2.2.0.0_plus_SP.fasta.novel.spades.fasta
+    output: AV58.Mamu_MiSeq-IPD_17.06.01_2.2.0.0_plus_SP.fasta.novel.oriented.fasta
+    jobid: 10
+
+[33mJob counts:
+	count	jobs
+	1	vsearch__novel_orient
+	1[0m
+vsearch v2.17.0_linux_x86_64, 1007.5GB RAM, 80 cores
+https://github.com/torognes/vsearch
+
+Reading file Mamu_MiSeq-IPD_17.06.01_2.2.0.0_plus_SP.fasta 100%
+253962 nt in 1455 seqs, min 125, max 247, avg 175
+Masking 100%
+Counting k-mers 100%
+Creating k-mer index 100%
+Orienting sequences 100%
+Forward oriented sequences: 8 (40.00%)
+Reverse oriented sequences: 12 (60.00%)
+All oriented sequences:     20 (100.00%)
+Not oriented sequences:     0 (0.00%)
+Total number of sequences:  20
+Removing temporary output file AV58.Mamu_MiSeq-IPD_17.06.01_2.2.0.0_plus_SP.fasta.novel.spades.fasta.
+[Wed May 12 18:42:29 2021]
+Finished job 10.
+11 of 16 steps (69%) done
+Select jobs to execute...
+
+[Wed May 12 18:42:30 2021]
+rule rename_novel:
+    input: AV58.Mamu_MiSeq-IPD_17.06.01_2.2.0.0_plus_SP.fasta.novel.oriented.fasta
+    output: AV58.Mamu_MiSeq-IPD_17.06.01_2.2.0.0_plus_SP.fasta.novel.renamed.fasta
+    jobid: 9
+
+[33mJob counts:
+	count	jobs
+	1	rename_novel
+	1[0m
+java -ea -Xmx3g -cp /opt/conda/opt/bbmap-38.90-1/current/ jgi.RenameReads in=AV58.Mamu_MiSeq-IPD_17.06.01_2.2.0.0_plus_SP.fasta.novel.oriented.fasta out=AV58.Mamu_MiSeq-IPD_17.06.01_2.2.0.0_plus_SP.fasta.novel.renamed.fasta addprefix=t -Xmx3g prefix=AV58
+Executing jgi.RenameReads [in=AV58.Mamu_MiSeq-IPD_17.06.01_2.2.0.0_plus_SP.fasta.novel.oriented.fasta, out=AV58.Mamu_MiSeq-IPD_17.06.01_2.2.0.0_plus_SP.fasta.novel.renamed.fasta, addprefix=t, -Xmx3g, prefix=AV58]
+
+Time: 0.120 seconds.
+Removing temporary output file AV58.Mamu_MiSeq-IPD_17.06.01_2.2.0.0_plus_SP.fasta.novel.oriented.fasta.
+[Wed May 12 18:42:32 2021]
+Finished job 9.
+12 of 16 steps (75%) done
+Select jobs to execute...
+
+[Wed May 12 18:42:33 2021]
+rule combine_unused:
+    input: AV58.Mamu_MiSeq-IPD_17.06.01_2.2.0.0_plus_SP.fasta.novel.renamed.fasta, AV58.Mamu_MiSeq-IPD_17.06.01_2.2.0.0_plus_SP.fasta.unused_exact.fasta
+    output: AV58.Mamu_MiSeq-IPD_17.06.01_2.2.0.0_plus_SP.fasta.novel.merged.fasta
+    jobid: 8
+
+[33mJob counts:
+	count	jobs
+	1	combine_unused
+	1[0m
+Removing temporary output file AV58.Mamu_MiSeq-IPD_17.06.01_2.2.0.0_plus_SP.fasta.novel.renamed.fasta.
+Removing temporary output file AV58.Mamu_MiSeq-IPD_17.06.01_2.2.0.0_plus_SP.fasta.unused_exact.fasta.
+[Wed May 12 18:42:35 2021]
+Finished job 8.
+13 of 16 steps (81%) done
+Select jobs to execute...
+
+[Wed May 12 18:42:35 2021]
+rule remove_near_identical:
+    input: AV58.Mamu_MiSeq-IPD_17.06.01_2.2.0.0_plus_SP.fasta.used_exact.fasta, AV58.Mamu_MiSeq-IPD_17.06.01_2.2.0.0_plus_SP.fasta.novel.merged.fasta
+    output: AV58.Mamu_MiSeq-IPD_17.06.01_2.2.0.0_plus_SP.fasta.novel.fasta
+    jobid: 7
+
+[33mJob counts:
+	count	jobs
+	1	remove_near_identical
+	1[0m
+java -ea -Xmx190995m -cp /opt/conda/opt/bbmap-38.90-1/current/ align2.BBMapPacBio build=1 overwrite=true minratio=0.40 fastareadlen=6000 ambiguous=best minscaf=100 startpad=10000 stoppad=10000 midpad=6000 ref=AV58.Mamu_MiSeq-IPD_17.06.01_2.2.0.0_plus_SP.fasta.used_exact.fasta in=AV58.Mamu_MiSeq-IPD_17.06.01_2.2.0.0_plus_SP.fasta.novel.merged.fasta minid=0.99 outu=AV58.Mamu_MiSeq-IPD_17.06.01_2.2.0.0_plus_SP.fasta.novel.fasta
+Executing align2.BBMapPacBio [build=1, overwrite=true, minratio=0.40, fastareadlen=6000, ambiguous=best, minscaf=100, startpad=10000, stoppad=10000, midpad=6000, ref=AV58.Mamu_MiSeq-IPD_17.06.01_2.2.0.0_plus_SP.fasta.used_exact.fasta, in=AV58.Mamu_MiSeq-IPD_17.06.01_2.2.0.0_plus_SP.fasta.novel.merged.fasta, minid=0.99, outu=AV58.Mamu_MiSeq-IPD_17.06.01_2.2.0.0_plus_SP.fasta.novel.fasta]
+Version 38.90
+
+Set MINIMUM_ALIGNMENT_SCORE_RATIO to 0.400
+Retaining first best site only for ambiguous mappings.
+NOTE:	Deleting contents of ref/genome/1 because reference is specified and overwrite=true
+NOTE:	Deleting contents of ref/index/1 because reference is specified and overwrite=true
+Writing reference.
+Executing dna.FastaToChromArrays2 [AV58.Mamu_MiSeq-IPD_17.06.01_2.2.0.0_plus_SP.fasta.used_exact.fasta, 1, writeinthread=false, genscaffoldinfo=true, retain, waitforwriting=false, gz=true, maxlen=536670912, writechroms=true, minscaf=100, midpad=6000, startpad=10000, stoppad=10000, nodisk=false]
+
+Set genScaffoldInfo=true
+Writing chunk 1
+Set genome to 1
+
+Loaded Reference:	0.020 seconds.
+Loading index for chunk 1-1, build 1
+No index available; generating from reference genome: /var/lib/condor/execute/slot1/dir_31166/ref/index/1/chr1_index_k12_c12_b1.block
+Indexing threads started for block 0-1
+Indexing threads finished for block 0-1
+Generated Index:	1.386 seconds.
+Analyzed Index:   	1.609 seconds.
+Started output stream:	0.013 seconds.
+Cleared Memory:    	0.118 seconds.
+Processing reads in single-ended mode.
+Started read stream.
+Started 1 mapping thread.
+Detecting finished threads: 0
+
+   ------------------   Results   ------------------   
+
+Genome:                	1
+Key Length:            	12
+Max Indel:             	100
+Minimum Score Ratio:  	0.4
+Mapping Mode:         	normal
+Reads Used:           	38	(14494 bases)
+
+Mapping:          	6.094 seconds.
+Reads/sec:       	6.24
+kBases/sec:      	2.38
+
+
+Read 1 data:      	pct reads	num reads 	pct bases	   num bases
+
+mapped:          	 18.4211% 	        7 	 10.7493% 	        1558
+unambiguous:     	 13.1579% 	        5 	  8.8450% 	        1282
+ambiguous:       	  5.2632% 	        2 	  1.9042% 	         276
+low-Q discards:  	  0.0000% 	        0 	  0.0000% 	           0
+
+perfect best site:	  0.0000% 	        0 	  0.0000% 	           0
+semiperfect site:	  2.6316% 	        1 	  0.9659% 	         140
+
+Match Rate:      	      NA 	       NA 	 99.3582% 	        1548
+Error Rate:      	 18.4211% 	        7 	  0.6418% 	          10
+Sub Rate:        	 18.4211% 	        7 	  0.5777% 	           9
+Del Rate:        	  0.0000% 	        0 	  0.0000% 	           0
+Ins Rate:        	  2.6316% 	        1 	  0.0642% 	           1
+N Rate:          	  0.0000% 	        0 	  0.0000% 	           0
+
+Total time:     	9.714 seconds.
+Removing temporary output file AV58.Mamu_MiSeq-IPD_17.06.01_2.2.0.0_plus_SP.fasta.novel.merged.fasta.
+[Wed May 12 18:42:47 2021]
+Finished job 7.
+14 of 16 steps (88%) done
+Select jobs to execute...
+
+[Wed May 12 18:42:47 2021]
+rule labkey_import:
+    input: AV58.Mamu_MiSeq-IPD_17.06.01_2.2.0.0_plus_SP.fasta.genotypes.csv
+    output: AV58.labkey.tkn
+    jobid: 15
+
+[33mJob counts:
+	count	jobs
+	1	labkey_import
+	1[0m
+[Wed May 12 18:42:50 2021]
+Finished job 15.
+15 of 16 steps (94%) done
+Select jobs to execute...
+
+[Wed May 12 18:42:50 2021]
+rule all:
+    input: AV58.Mamu_MiSeq-IPD_17.06.01_2.2.0.0_plus_SP.fasta.genotypes.csv, AV58.Mamu_MiSeq-IPD_17.06.01_2.2.0.0_plus_SP.fasta.used_exact.fasta, AV58.Mamu_MiSeq-IPD_17.06.01_2.2.0.0_plus_SP.fasta.novel.fasta, AV58.labkey.tkn
+    jobid: 0
+
+[33mJob counts:
+	count	jobs
+	1	all
+	1[0m
+[Wed May 12 18:42:52 2021]
+Finished job 0.
+16 of 16 steps (100%) done
+Complete log: /var/lib/condor/execute/slot1/dir_31166/.snakemake/log/2021-05-12T173915.363596.snakemake.log
