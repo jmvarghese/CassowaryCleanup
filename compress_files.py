@@ -8,7 +8,7 @@ import subprocess
 import logging
 import multiprocessing
 import argparse
-from icecream import ic
+#from icecream import ic
 from typing import Tuple, Set, List
 
 def parse_command_line_args() -> str:
@@ -31,7 +31,7 @@ def find_files(directory: str, extensions: Tuple[str, ...]) -> List[str]:
     for root, _, files in os.walk(directory):
         for file in files:
             if file.endswith(extensions) and not file.startswith("._"):
-                ic(file)
+                #ic(file)
                 file_list.append(os.path.join(root, file))
     
     return file_list
@@ -56,7 +56,7 @@ def process_file(
             subprocess.run(
                 ["samtools", "view", "-b", "-o", f"{file}.bam", file], check=True
             )
-        preprocessed_files.add(file)
+        preprocessed_files.add("INFO:"+file)
 
 
 def main() -> None:
@@ -111,7 +111,10 @@ def main() -> None:
             for file in fasta_files + fastq_files + sam_files
         ],
     )
-
+    
+    for file in fasta_files + fastq_files + sam_files:
+        logger.info(file)
+    
     # Close the pool
     pool.close()
     pool.join()
