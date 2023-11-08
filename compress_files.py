@@ -1,6 +1,9 @@
 #!/usr/bin/env python3
 
 """
+This script searches for uncompressed/human readable sequence data files in a given directory,
+compresses them using pigz or converts SAM files to BAM format using samtools, and logs the
+compression details.
 """
 
 import os
@@ -11,9 +14,13 @@ from typing import Tuple, Set, List
 from filelock import FileLock, Timeout
 import time
 
-
 def parse_command_line_args() -> Tuple[str, str]:
-    """Parse command line arguments."""
+    """
+    Parse command line arguments.
+
+    Returns:
+        Tuple: A tuple containing the search directory path and the logging file path.
+    """
     parser = argparse.ArgumentParser()
     parser.add_argument(
         "--search_dir",
@@ -33,21 +40,25 @@ def parse_command_line_args() -> Tuple[str, str]:
     args = parser.parse_args()
     return args.search_dir, args.logging_file
 
-
-# Function to find files
 def find_files(directory: str, extensions: Tuple[str, ...]) -> List[str]:
-    """ """
+    """
+    Find files with specified extensions in a given directory and its subdirectories.
 
+    Args:
+        directory (str): The directory to search for files.
+        extensions (Tuple[str, ...]): A tuple of file extensions to search for.
+
+    Returns:
+        List[str]: A list of file paths that match the specified extensions.
+    """
     file_list: List[str] = []
 
     for root, _, files in os.walk(directory):
         for file in files:
             if file.endswith(extensions) and not file.startswith("._"):
-                # ic(file)
                 file_list.append(os.path.join(root, file))
 
     return file_list
-
 
 def process_file(
     file: str,
@@ -57,7 +68,17 @@ def process_file(
     extensions3: Tuple[str],
     log_path: str,
 ) -> None:
-    """ """
+    """
+    Compress or convert a file and log the details.
+
+    Args:
+        file (str): The path to the file to process.
+        preprocessed_files (Set[str]): A set of files that have already been processed.
+        extensions1 (Tuple[str]): Tuple of extensions for the first compression method.
+        extensions2 (Tuple[str]): Tuple of extensions for the second compression method.
+        extensions3 (Tuple[str]): Tuple of extensions for file conversion.
+        log_path (str): The path to the logging file.
+    """
     t1 = time.time()
     orig_size = os.stat(file).st_size / (1024*1024)
     
@@ -83,10 +104,10 @@ def process_file(
     finally:
         lock.release()
 
-
 def main() -> None:
-    """ """
-
+    """
+    Main function to execute the file processing and compression tasks.
+    """
     # Set the directory to start the search
     base_directory, log_path = parse_command_line_args()
 
@@ -132,7 +153,6 @@ def main() -> None:
     # Close the pool
     pool.close()
     pool.join()
-
 
 if __name__ == "__main__":
     main()
