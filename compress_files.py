@@ -9,6 +9,7 @@ import multiprocessing
 import argparse
 from typing import Tuple, Set, List
 from filelock import FileLock, Timeout
+import time
 
 
 def parse_command_line_args() -> Tuple[str, str]:
@@ -57,7 +58,9 @@ def process_file(
     log_path: str,
 ) -> None:
     """ """
-
+    t1 = time.time()
+    orig_size = os.stat(file).st_size / (1024*1024)
+    
     if file in preprocessed_files:
         return
 
@@ -67,13 +70,16 @@ def process_file(
         subprocess.run(
             ["samtools", "view", "-b", "-o", f"{file}.bam", file], check=True
         )
+    
+    time_elapsed = time.time() - t1
+    fin_size = os.stat(f"{file}.gz").st_size / (1024*1024)
 
     lock_path = f"{log_path}.lock"
     lock = FileLock(lock_path, timeout=60)
     lock.acquire()
     try:
         with open(log_path, "a", encoding="utf-8") as log:
-            log.write(f"{file}\n")
+            log.write(f"{file}\t{time_elapsed}\t{orig_size}\t{fin_size}\n")
     finally:
         lock.release()
 
@@ -91,11 +97,14 @@ def main() -> None:
 
     # Check for existing logs
     processed_files = set()
-    if os.path.exists("processing_log.txt"):
-        with open("processing_log.txt", "r", encoding="utf-8") as log_file:
+    if os.path.exists("compression.log"):
+        with open("compression.log", "r", encoding="utf-8") as log_file:
             for line in log_file:
                 processed_files.add(line.strip())
-
+    else:
+        with open("compression.log", "w", encoding="utf-8") as log:
+            log.write("File\tTime (ms)\tOriginal Size\tCompressed Size\n")
+        
     # Get lists of files
     fasta_files = find_files(base_directory, fasta_extensions)
     fastq_files = find_files(base_directory, fastq_extensions)
