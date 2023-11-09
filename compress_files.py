@@ -11,10 +11,11 @@ import subprocess
 import multiprocessing
 import argparse
 from typing import Tuple, Set, List
-from filelock import FileLock, Timeout
 import time
+from filelock import FileLock
 
-def parse_command_line_args() -> Tuple[str, str]:
+
+def parse_command_line_args() -> Tuple[str, str, bool]:
     """
     Parse command line arguments.
 
@@ -37,8 +38,17 @@ def parse_command_line_args() -> Tuple[str, str]:
         default="compression.log",
         help="Directory to search for uncompressed/human readable sequence data.",
     )
+    parser.add_argument(
+        "--dry-run",
+        "-t",
+        type=bool,
+        required=False,
+        default=False,
+        help="Set to true to create a log of all files without actually compressing them.",
+    )
     args = parser.parse_args()
-    return args.search_dir, args.logging_file
+    return args.search_dir, args.logging_file, args.dry_run
+
 
 def find_files(directory: str, extensions: Tuple[str, ...]) -> List[str]:
     """
@@ -60,6 +70,7 @@ def find_files(directory: str, extensions: Tuple[str, ...]) -> List[str]:
 
     return file_list
 
+
 def process_file(
     file: str,
     preprocessed_files: Set[str],
@@ -67,6 +78,7 @@ def process_file(
     extensions2: Tuple[str],
     extensions3: Tuple[str],
     log_path: str,
+    dry_run: bool
 ) -> None:
     """
     Compress or convert a file and log the details.
@@ -80,20 +92,20 @@ def process_file(
         log_path (str): The path to the logging file.
     """
     t1 = time.time()
-    orig_size = os.stat(file).st_size / (1024*1024)
-    
+    orig_size = os.stat(file).st_size / (1024 * 1024)
+
     if file in preprocessed_files:
         return
 
-    if file.endswith(extensions1) or file.endswith(extensions2):
+    if file.endswith(extensions1) or file.endswith(extensions2) and not dry_run:
         subprocess.run(["pigz", file], check=True)
-    elif file.endswith(extensions3):
+    elif file.endswith(extensions3) and not dry_run:
         subprocess.run(
             ["samtools", "view", "-b", "-o", f"{file}.bam", file], check=True
         )
-    
+
     time_elapsed = time.time() - t1
-    fin_size = os.stat(f"{file}.gz").st_size / (1024*1024)
+    fin_size = os.stat(f"{file}.gz").st_size / (1024 * 1024)
 
     lock_path = f"{log_path}.lock"
     lock = FileLock(lock_path, timeout=60)
@@ -104,12 +116,13 @@ def process_file(
     finally:
         lock.release()
 
+
 def main() -> None:
     """
     Main function to execute the file processing and compression tasks.
     """
     # Set the directory to start the search
-    base_directory, log_path = parse_command_line_args()
+    base_directory, log_path, whether_dry = parse_command_line_args()
 
     # Define file extensions
     fasta_extensions = tuple([".fasta", ".fa"])
@@ -125,7 +138,7 @@ def main() -> None:
     else:
         with open("compression.log", "w", encoding="utf-8") as log:
             log.write("File\tTime (ms)\tOriginal Size\tCompressed Size\n")
-        
+
     # Get lists of files
     fasta_files = find_files(base_directory, fasta_extensions)
     fastq_files = find_files(base_directory, fastq_extensions)
@@ -145,6 +158,7 @@ def main() -> None:
                 fastq_extensions,
                 sam_extensions,
                 log_path,
+                whether_dry
             )
             for file in fasta_files + fastq_files + sam_files
         ],
@@ -153,6 +167,7 @@ def main() -> None:
     # Close the pool
     pool.close()
     pool.join()
+
 
 if __name__ == "__main__":
     main()
