@@ -105,7 +105,10 @@ def process_file(
         )
 
     time_elapsed = time.time() - t1
-    fin_size = os.stat(f"{file}.gz").st_size / (1024 * 1024)
+    if not dry_run:
+        fin_size = os.stat(f"{file}.gz").st_size / (1024 * 1024)
+    else:
+        fin_size = None
 
     lock_path = f"{log_path}.lock"
     lock = FileLock(lock_path, timeout=60)
