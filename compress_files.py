@@ -78,7 +78,7 @@ def process_file(
     extensions2: Tuple[str],
     extensions3: Tuple[str],
     log_path: str,
-    dry_run: bool
+    dry_run: bool,
 ) -> None:
     """
     Compress or convert a file and log the details.
@@ -161,7 +161,7 @@ def main() -> None:
                 fastq_extensions,
                 sam_extensions,
                 log_path,
-                whether_dry
+                whether_dry,
             )
             for file in fasta_files + fastq_files + sam_files
         ],
